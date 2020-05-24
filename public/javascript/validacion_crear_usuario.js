@@ -1,4 +1,4 @@
-var vgeneral = [false, false, false, false, false, false, false, false, false, false];
+var vgeneral = [false, false, false, false, false, false, false, false, false, false, false];
 
 function validacion(formulario){
     var bandera = true;
@@ -15,10 +15,11 @@ function validacion(formulario){
         validarNA(document.getElementById('lastname'), 'mapellido',3)
         verificarDT(document.getElementById('address'), 'mdireccion',4);
         verificarDT(document.getElementById('telf'), 'mtelefono',5);
-        verificarOperadora(document.getElementById(oper), 'moper', 6)
-        validarFecha(7);
-        verificarCorreo(8);
-        verificarContrasena(9);
+        verificarOperadoraTipo(document.getElementById(oper), 'moper', 6)
+        verificarOperadoraTipo(document.getElementById(oper), 'moper', 7)
+        validarFecha(8);
+        verificarCorreo(9);
+        verificarContrasena(10);
     }
 
     return bandera;
@@ -74,20 +75,25 @@ function validarRol(id){
     return bandera;
 }
 
-function verificarOperadora(id){
+function validarOperadoraTipo(atri, men,id){
+    console.log('adad')
     bandera = false;
-    operadora = document.getElementById('oper').value;
-    if(operadora.length>2){
-        arreglo(document.getElementById('oper'), 'moper');
+    campo = document.getElementById(atri).value;
+    if(campo.length>2){
+        arreglo(document.getElementById(atri), men);
         bandera = true;
         vgeneral[id]=bandera;
     }else{
-        error(document.getElementById('oper'), 'moper', '<br>El texto es muy pequeño para ser una operadora')
+        error(document.getElementById(atri), men, '<br>El texto es muy pequeño para este campo')
         bandera = false;
         vgeneral[id]=bandera;
     }
     return bandera;
 }
+
+
+
+
 
 //FORMATO ERROR/ARREGLO
 function error(inp, spa, men){
@@ -295,8 +301,8 @@ function verificarContrasena(id){
 function verificarDT(atrib, mens, id){
     var bandera = true;
     if(atrib.value.length > 0){
-        if(mens=='mtelefono' && atrib.value.length<10){
-            error(atrib, mens, '<br>El numero de telefono debe ser de 10 digitos')
+        if(mens=='mtelefono' && atrib.value.length<9){
+            error(atrib, mens, '<br>El numero de telefono no tiene los digitos necesarios')
             bandera = false;
             vgeneral[id]=bandera;
         }else{

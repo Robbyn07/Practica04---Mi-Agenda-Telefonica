@@ -2,6 +2,15 @@ body{
     background-color: rgb(232,241,232);
 }
 
+form{
+    background-color: rgb(229, 243, 244);
+}
+
+#separador{
+    margin-bottom: 20px;
+    clear: both;
+}
+
 input{
     float: left;
     margin-right: 20px;
