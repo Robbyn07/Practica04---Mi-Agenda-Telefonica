@@ -1,0 +1,174 @@
+<!--
+<!DOCTYPE html>
+
+
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <link rel="stylesheet" type="text/css" href="../css/index.css">
+</head>
+<body>
+    
+    <input type="button" id="registrar" name="registrar" value="Registrar" onclick="location.href='crear_usuario.html'"> 
+    <input type="button" id="login" name="login" value="Login" onclick="location.href='login.html'"> 
+    <input type="button" id="listar" name="listar" value="Listar Telefonos" onclick="location.href='listar_telefonos.html'"> 
+    <input type="button" id="llamar" name="llamar" value="Contactate con nosotros" onclick="location.href='tel:+1998476387'"> 
+    <input type="button" id="correo" name="correo" value="Envianos un correo" onclick="location.href='mailto:plojam@est.ups.edu.ec'"> 
+    
+
+</body>
+</html>
+-->
+
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <title>Pagina Inicial</title>
+    <link rel="stylesheet" type="text/css" href="../css/index.css">
+    <link rel="stylesheet" type="text/css" href="../css/galeria.css">
+    <script type="text/javascript" src="../javascript/galeria.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Agenda Personal</h1>
+        <img id="logo_principal" src="../contenido/logo_ups.png" alt="logo">
+        <input id="fieldset_busqueda" type="text" placeholder="Agrege lo que desea buscar">
+
+        <div class="iconos">
+            <a href="login.html"><img src="../contenido/icono_usuario.png"></a>
+            <span>Logeo</span>
+        </div>
+
+        <div class="iconos">
+            <a href="crear_usuario.html"><img src="../contenido/icono_mas.png"></a>
+            <span>Registrarse</span>
+        </div>
+
+        <div class="iconos">
+            <a href="listar_telefonos.html"><img src="../contenido/icono_mensaje.png"></a>
+            <span>Contactos</span>
+        </div>
+    </header>
+
+    <div class="jump"></div>
+
+    <nav class="navegacion_principal">
+        <ul>
+            <li><a href="">Iniciar Sesion</a></li>
+            <li><a href="">Registrarse</a></li>
+            <li><a href="">Contactos</a></li>
+        </ul>
+    </nav>
+
+    <div class="jump"></div>
+
+    <section id="informacion">
+        <h5>texto vacio</h5>
+
+        <article id="general">
+            <h3>Informacion</h3>
+            
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint vero unde voluptatum, modi aliquam nihil eaque corrupti officiis 
+              sunt vel dolorum quam animi error ea? Iusto tempore quae aliquam. Quam voluptatum velit voluptatibus nihil enim architecto est 
+              nisi veritatis eveniet dolores, blanditiis ducimus praesentium illum qui molestias deleniti. Cumque omnis veritatis nihil, officia 
+              quisquam sit corrupti voluptates ut exercitationem sequi expedita fuga officiis odio tempore dolore hic obcaecati perspiciatis maxime, 
+              ullam sed minima minus quos! Officia ad, minus ducimus ratione accusantium quo ea autem dolores obcaecati optio consectetur at consequatur, 
+              similique ex aliquid minima rerum amet! Tenetur dolorum cum veniam!.
+            </p>  
+
+            <div id="buttons">
+              <input type="button" value="Ir a Google">
+              <input type="button" value="Ir a Bing">
+            </div>
+        </article>
+
+        <aside id="img_general">
+          <img src="../contenido/mensajeria_social.jpg" alt="agenda"/>
+          <span>texto increiblemente salvaje aparece</span>
+        </aside>
+    </section>
+
+    <section id="galeria" onload="generarImagenes()">
+      <h2>Galeria</h2>
+
+      <div id="d1">
+          <img id="i1" src="images/i0.jpg" alt="">
+      </div>
+      <div id="d2">
+          <img id="i2" src="images/i2.jpg" alt="">
+      </div>
+      <input type="button" value="Anterior" id="anterior" onclick="anterior()" >
+      <input type="button" value="Iniciar" id="iniciar" onclick="generarImagenes()">
+      <input type="button" value="Siguiente" id="siguiente"  onclick="siguiente()" >
+    </section>
+
+    <section id="algo">
+      <h5>texto vacio</h5>
+      <img id="autor" src="" alt="autor" width="200" height="200">
+
+      <article>
+        <h3>Comentario</h3>
+        
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloribus quos, sequi obcaecati odio quasi fuga placeat iste porro facere 
+          eligendi nemo harum animi voluptatem velit veniam labore rem neque aliquid rerum tempore quam nisi modi nam! Saepe ipsam, rerum aperiam 
+          veritatis nostrum facere beatae, quos nihil maiores inventore voluptas molestias.
+        </p>
+      </article>
+    </section>
+
+    <section id="autores">
+      <h2>Equipo</h2>
+
+      <div id="pablo">
+        <img class="filter" src="../contenido/pablo_loja.jpg" alt="Pablo Loja" width="180" height="180"><br>
+        <span class="image_description">Pablo Loja.</span>
+      </div>
+
+      <div id="robbyn">
+        <img class="filter" src="../contenido/robbyn_reyes.jpg" alt="Robbbyn Reyes" width="180" height="180"><br>
+        <span class="image_description">Robbyn Reyes.</span>
+      </div>
+    </section>
+
+    <footer>
+      <fieldset>
+        <legend>Contacto</legend>
+
+        <span>
+            Autores: <br>
+            Pablo Esteban Loja Morocho, Robbyn Taurino Reyes Duchitanga<br>
+            Correos: <br>
+            <a href="mailto:rreyesd@est.ups.edu.ec">rreyesd@est.ups.edu.ec</a>,<a href="mailto:rreyesd@est.ups.edu.ec"> ploja@est.ups.edu.ec</a><br>
+            Telefonos: <br>
+            <a href="tel:+0969784090">0969784090</a>, <a href="tel:+0969784090"> 0969784090</a><br>
+        </span>
+      </fieldset>
+
+      <fieldset>
+        <legend>Redes Sociales</legend>
+
+        <a href="https://www.facebook.com/Rakrad7101/"><img src="../Images/icons/icono_facebook.png" alt="facebook"></a>
+        <a href="https://www.instagram.com/rakrad07/?hl=es-la"><img src="../Images/icons/icono_instagram.png" alt="instagram"></a>
+      </fieldset>
+
+      <fieldset>
+        <legend>Institucion</legend>
+
+        <span>
+          Universidad: Universidad Politecnica Salesian<br>
+          Sede: Cuenca<br>
+          Periodo: 56<br>
+        </span>
+      </fieldset>
+      <br>
+      <span>&copy; Todos los derechos reservados.</span>
+    </footer>
+</body>
+</html>

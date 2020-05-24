@@ -1,0 +1,149 @@
+html{
+    background-color: royalblue;
+}
+
+:link{
+    text-decoration: none;
+    color: ivory !important;
+}
+
+:visited{
+    color: ivory !important;
+}
+
+body p{
+    text-align: justify;
+}
+
+body h1, h2, h3{
+    text-align: center;
+}
+
+body h5{
+    position: absolute;
+    visibility: hidden;
+}
+
+header {
+    width: 100%;
+}
+
+#logo_principal{
+    width: 25%;   
+    float: left;
+}
+
+#fieldset_busqueda{
+    width: 50%;  
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 50px;
+    float: left;
+}
+
+.iconos{
+    width: 5.5%;
+    margin-top: 25px;
+    float: left;
+    text-align: center;
+    display: block;
+}
+
+.jump{
+    width: 100%;
+    height: 5px;
+    clear: both;
+}
+
+.navegacion_principal{
+    width: 100%;
+    float: left;
+}
+
+.navegacion_principal li{
+    width: 20%;
+    list-style-type: none;
+    text-align: center;
+    float: left;
+}
+
+#informacion{
+    width: 100%;
+    float: left;
+    background-color: ivory;
+    border: black solid;
+}
+
+#general{
+    width: 48%;
+    padding: 10px 20px;
+    float: left;
+}
+
+#img_general{
+    width: 48%;
+    float: right;
+}
+
+#img_general img{
+    width: 50%;
+    padding: 10px 190px;
+}
+
+#img_general span{
+    width: 100%;
+    text-align: center;
+}
+/*
+#galeria{
+    width: 100%;
+}
+*/
+#algo{
+    width: 100%;
+    border: black solid;
+    background-color: blanchedalmond;
+    float: left;
+}
+
+#algo article{
+    width: 68%;
+    padding: 10px 20px;
+    float: right;
+}
+
+#autores{
+    width: 100%;
+    float: left;
+    border: black solid;
+    background-color: blanchedalmond;
+}
+
+#pablo{
+    width: 25%;
+    padding-left: 25%;
+    float: left;
+}
+
+#robbyn{
+    width: 25%;
+    padding-right: 15%;
+    float: right;
+}
+
+footer{
+    width: 100%;
+    float: left;
+    background-color: yellowgreen;
+    clear: both;
+}
+
+footer fieldset{
+    width: 31%;
+    float: left;
+}
+
+footer span{
+    width: 100%;
+    float: left;
+}
