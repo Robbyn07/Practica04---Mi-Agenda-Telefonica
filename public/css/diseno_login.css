@@ -29,7 +29,7 @@ input[type=text], input[type=password]{
     background-color: rgb(243, 243, 243);
 }
 
-input[type=submit], input[type=reset]{
+input[type=submit], #cancelar{
     float: right;
     margin-top: 20px;
 }

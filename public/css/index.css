@@ -1,0 +1,28 @@
+body{
+    background-color: rgb(232,241,232);
+}
+
+input{
+    width: 40%;
+    height: 400px;
+    background-color: rgb(229, 243, 244);
+    font-size: 180%;
+    font-weight: bold;
+}
+
+#listar, #registrar{
+    clear: both;
+    margin-left: 10%;
+}
+
+#llamar, #correo{
+    width: 20%;
+}
+
+#registrar, #login{
+    margin-top: 50px;
+}
+
+input:hover{
+    background-color: #FFFCBA;
+}
