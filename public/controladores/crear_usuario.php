@@ -34,12 +34,11 @@
         $sql2 = "SELECT usu_id FROM usuario WHERE usu_cedula='$cedula'";
         $result = $conn->query($sql2);
 
-        if ($result->num_rows > 0) {
-            $id_cedula =0 ;
+        //if ($result->num_rows > 0) {
             while($row = $result->fetch_assoc()) {
-                $id_id =  $row["usu_id"];
+                $usu_id =  $row["usu_id"];
             }
-            $sql3 = "INSERT INTO telefono VALUES (0, '$telefono', '$operadora', 'N', null, null, $id_id)";
+            $sql3 = "INSERT INTO telefono VALUES (0, '$telefono', '$operadora', 'N', null, null, $usu_id)";
             if($conn->query($sql3) === TRUE){
                 echo "<p>Se ha creado los datos personales correctamemte!!!</p>";
                 header ("Location: ../vista/login.html");
@@ -49,10 +48,10 @@
             }
 
             
-        } else {
-            echo "<p class='error'>Error: " . mysqli_error($conn) . "</p>";
-            echo "<a href='../vista/login.html'>Ir a login</a>";
-        }
+        //} else {
+         //   echo "<p class='error'>Error: " . mysqli_error($conn) . "</p>";
+         //   echo "<a href='../vista/login.html'>Ir a login</a>";
+        //}
         
     } else {
         if($conn->errno == 1062){

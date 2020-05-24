@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Listado de telefonos</title>
+    <link rel="stylesheet" type="text/css" href="../css/listar_telefonos.css"/>
+    <script type="text/javascript" src="../javascript/listar_telefonos.js"></script>
+</head>
+<body>
+
+    <form onsubmit="return buscarPorCedula()">
+        <input type="text" id="cedula" name="cedula" value="">
+        <input type="button" id="buscarcedula" name="buscarcedula" value="Buscar por cedula" onclick="buscarPorCedula()">
+        <input type="text" id="correo" name="correo" value="">
+        <input type="button" id="buscarcorreo" name="buscarcorreo" value="Buscar por correo" onclick="buscarPorCorreo()">
+    </form>
+    <h2>Telefonos relacionados</h2>
+    <div id="informacion"><b></b></div>
+
+</body>
+</html>
