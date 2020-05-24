@@ -1,25 +1,23 @@
-var vgeneral = [false, false, false, false, false, false, false, false, false, false, false];
+var vgeneral = [false, false, false, false, false, false, false];
 
 function validacion(formulario){
     var bandera = true;
-    for(var i=0; i<11 ; i++){
+
+    for(var i=0; i<7 ; i++){
         if(vgeneral[i]==false){
             bandera = false;
-            i = 11;
+            i = 7;
         }
     }
+
     if(bandera!==true){
         validarCedula(0);
         validarRol(1);
         validarNA(document.getElementById('name'), 'mnombre',2);
         validarNA(document.getElementById('lastname'), 'mapellido',3)
         verificarDT(document.getElementById('address'), 'mdireccion',4);
-        verificarDT(document.getElementById('telf'), 'mtelefono',5);
-        verificarOperadoraTipo('oper' , 'moper', 6)
-        verificarOperadoraTipo('tipo', 'mtipo', 7)
-        validarFecha(8);
-        verificarCorreo(9);
-        verificarContrasena(10);
+        validarFecha(5);
+        verificarCorreo(6);
     }
 
     return bandera;
@@ -75,38 +73,18 @@ function validarRol(id){
     return bandera;
 }
 
-function validarOperadoraTipo(atri, men,id){
-    console.log('adad')
-    bandera = false;
-    campo = document.getElementById(atri).value;
-    if(campo.length>2){
-        arreglo(document.getElementById(atri), men);
-        bandera = true;
-        vgeneral[id]=bandera;
-    }else{
-        error(document.getElementById(atri), men, '<br>El texto es muy pequeño para este campo')
-        bandera = false;
-        vgeneral[id]=bandera;
-    }
-    return bandera;
-}
-
-
-
-
-
 //FORMATO ERROR/ARREGLO
 function error(inp, spa, men){
     document.getElementById(spa).innerHTML = men;
     inp.style.border = '2px red solid';
     inp.className = 'error';
 }
+
 function arreglo(inp, spa){
     document.getElementById(spa).innerHTML = '';
     inp.style.border = '2px green solid';
     inp.className = 'none';
 }
-
 
 //VALIDACION CEDULA
 function validarCedula (id){
@@ -147,7 +125,6 @@ function validarCedula (id){
     return bandera;
 }
 
-
 //VALIDACION NOMBRES Y APELLIDOS
 function validarNA(atri, men, id){
     var bandera = true;
@@ -169,7 +146,6 @@ function validarNA(atri, men, id){
     }
     return bandera;
 }
-
 
 //VALIDAR FECHA
 function soloFecha(fec){
@@ -252,49 +228,6 @@ function verificarCorreo(id){
         vgeneral[id]=bandera;
     }
 
-}
-
-//VERIFICAR CONTRASENIA
-function verificarContrasena(id){
-    var bandera = true;
-    var senmayus = false;
-    var senminus = false;
-    var ltascii;
-    var contra = document.getElementById('password').value;
-    if(contra.length>=8){
-        if(contra.includes('_')==true || contra.includes('@')==true || contra.includes('$')==true){
-            for(var i=0; i<contra.length; i++){
-                ltascii = contra.charCodeAt(i);
-                if(ltascii>=65 && ltascii<=90){
-                    senmayus = true;
-                }
-                if((ltascii>=97 && ltascii<=122)){
-                    senminus = true;
-                }
-                if(senmayus==true && senminus==true){
-                    i = contra.length;
-                }
-            }
-            if(senmayus==true && senminus==true){
-                arreglo(document.getElementById('password'), 'mcontrasena');
-                bandera = true;
-                vgeneral[id]=bandera;
-            }else{
-                error(document.getElementById('password'), 'mcontrasena', '<br>La contrasena no contiene mayusculas o minusculas')
-                bandera = false;
-                vgeneral[id]=bandera;
-            }
-        }else{
-            error(document.getElementById('password'), 'mcontrasena', '<br>La contrasena no contiene caracteres especiales')
-            bandera = false;
-            vgeneral[id]=bandera;
-        }
-    }else{
-        error(document.getElementById('password'), 'mcontrasena', '<br>Contraseña muy corta')
-        bandera = false;
-        vgeneral[id]=bandera;
-    }
-    return bandera;
 }
 
 //Verificar direccion y telefono

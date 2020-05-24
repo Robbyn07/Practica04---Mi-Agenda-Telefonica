@@ -17,10 +17,10 @@
         echo $usu_id;
         if($usu_rol=='A'){
             $_SESSION['isLogged'] = TRUE;
-            header("Location: ../../admin/vista/admin/index.php ? id=" . $usu_id);
+            header("Location: ../../admin/vista/admin/index.php?id=".$usu_id);
         }else{
             $_SESSION['isLogged'] = TRUE;
-            header("Location: ../../admin/vista/usuario/index.php ? id=" . $usu_id);
+            header("Location: ../../admin/vista/usuario/index.php?id=".$usu_id);
         }
         
     } else {

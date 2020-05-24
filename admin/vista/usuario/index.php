@@ -12,7 +12,7 @@
     session_start(); 
     
     if(!isset($_SESSION['isLogged']) || $_SESSION['isLogged'] === FALSE){ 
-        header("Location: ../../../public/vista/index.html"); 
+      header("Location: ../../../public/vista/index.html"); 
     } 
   ?>
 
@@ -26,7 +26,7 @@
   </header>
 
   <input type="button" id="modificar_usu" name="modificar_usu" value="Modificar Informacion" onclick=<?php echo "location.href='modificar_info.php?id=$usu_id'"?>> 
-  <input type="button" id="cambiar_contra" name="cambiar_contra" value="Cambiar Contrasena" onclick="location.href='cambiar_contra.php'"> 
+  <input type="button" id="cambiar_contra" name="cambiar_contra" value="Cambiar Contrasena" onclick=<?php echo "location.href='cambiar_contrasena.php?id=$usu_id'"?>> 
   <input type="button" id="agenda" name="agenda" value="Agenda" onclick="location.href='agenda.php'">
   <input type="button" id="cerrar_sesion" name="cerrar_sesion" value="Cerrar Sesion" onclick="location.href='../../../config/cerrar_sesion.php'">
 

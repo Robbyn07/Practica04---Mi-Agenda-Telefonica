@@ -4,6 +4,8 @@
 <head> 
     <meta charset="UTF-8"> 
     <title>Modificar Datos</title> 
+    <link rel="stylesheet" type="text/css" href="../../css/diseno_modificar.css"/>
+    <script type="text/javascript" src="../../javascript/validacion_modificar.js"></script>
 </head> 
 
 <body> 
@@ -16,13 +18,8 @@
     ?>
 
     <?php
-        echo "hola mundo";
-
         $codigo = $_GET["id"]; 
         $sql = "SELECT * FROM usuario where usu_id=$codigo"; 
-        
-        echo $codigo;
-        echo "soy peor";
 
         include '../../../config/conexionBD.php'; 
         $result = $conn->query($sql); 
@@ -30,31 +27,45 @@
         if ($result->num_rows > 0) { 
             while($row = $result->fetch_assoc()) { 
                 ?> 
-                <form id="formulario01" method="POST" action="../../controladores/usuario/modificar.php"> 
-                
-                    <input type="hidden" id="id" name="id" value="<?php echo $codigo ?>" /> 
+                <form method="POST" onsubmit="return validacion(this)" action="../../controladores/usuario/modificar_info.php">
+                    <fieldset>
+                        <legend>Formulario</legend>
 
-                    <label for="cedula">Cedula (*)</label> 
-                    <input type="text" id="cedula" name="cedula" value="<?php echo $row["usu_cedula"]; ?>" required placeholder="Ingrese la cedula ..."/> 
-                    <br> 
-                    <label for="nombres">Nombres (*)</label> 
-                    <input type="text" id="nombres" name="nombres" value="<?php echo $row["usu_nombres"]; ?>" required placeholder="Ingrese los dos nombres ..."/>
-                    <br> 
-                    <label for="apellidos">Apelidos (*)</label> 
-                    <input type="text" id="apellidos" name="apellidos" value="<?php echo $row["usu_apellidos"]; ?>" required placeholder="Ingrese los dos apellidos ..."/> 
-                    <br> 
-                    <label for="direccion">Dirección (*)</label> 
-                    <input type="text" id="direccion" name="direccion" value="<?php echo $row["usu_direccion"]; ?>" required placeholder="Ingrese la dirección ..."/> 
-                    <br>
-                    <label for="fecha">Fecha Nacimiento (*)</label> 
-                    <input type="date" id="fechaNacimiento" name="fechaNacimiento" value="<?php echo $row["usu_fecha_nacimiento"]; ?>" required placeholder="Ingrese la fecha de nacimiento ..."/> 
-                    <br> 
-                    <label for="correo">Correo electrónico (*)</label> 
-                    <input type="email" id="correo" name="correo" value="<?php echo $row["usu_correo"]; ?>" required placeholder="Ingrese el correo electrónico ..."/> 
-                    <br> 
-                    <input type="submit" id="modificar" name="modificar" value="Modificar" /> 
-                    <input type="reset" id="cancelar" name="cancelar" value="Cancelar" /> 
-                </form> 
+                        <input type="hidden" id="id" name="id" value="<?php echo $codigo ?>" /> 
+
+                        <label>Cedula</label>
+                        <input type="text" id="dni" name="dni" value="<?php echo $row["usu_cedula"]; ?>" placeholder="Ej. 9999999999" onkeyup="return noLetras(this), validarCedula(0)" />
+                        <span id="mcedula" class="error"></span>
+
+                        <label>Rol</label>
+                        <input type="text" id="rol" name="rol" value="<?php echo $row["usu_rol"]; ?>" placeholder="Ej. A/U" onkeyup="return noNumeros(this), validarRol(1)" />
+                        <span id="mrol" class="error"></span>
+
+                        <label>Nombres</label>
+                        <input type="text" id="name" name="name" value="<?php echo $row["usu_nombres"]; ?>" placeholder="Ej. Pablo Esteban" onkeyup="return noNumeros(this), validarNA(this, 'mnombre', 2)"/>
+                        <span id="mnombre" class="error"></span>
+
+                        <label>Apellidos</label>
+                        <input type="text" id="lastname" name="lastname" value="<?php echo $row["usu_apellidos"]; ?>" placeholder="Ej. Loja Morocho" onkeyup="return noNumeros(this), validarNA(this, 'mapellido', 3)"/>
+                        <span id="mapellido" class="error"></span>
+
+                        <label>Direccion</label>
+                        <input type="text" id="address" name="address" value="<?php echo $row["usu_direccion"]; ?>" placeholder="Ej. Av. calle1" onkeyup="return verificarDT(this, 'mdireccion', 4)"/>
+                        <span id="mdireccion" class="error"></span>
+
+                        <label>Fecha de nacimiento</label>
+                        <input type="text" id="nac" name="nac" value="<?php echo $row["usu_fecha_nacimiento"]; ?>" placeholder="Ej. 1999-01-20" onkeyup="return soloFecha(this), validarFecha(5)"/>
+                        <span id="mnac" class="error" ></span>
+
+                        <label>E-mail</label>
+                        <input type="text" id="email" name="email" value="<?php echo $row["usu_correo"]; ?>" placeholder="Ej. usu1@est.ups.edu.ec / usu2@ups.edu.ec" onkeyup="return verificarCorreo(6)"/>
+                        <span id="mmail" class="error"></span>
+
+                        <input id="modificar" type="submit" value="Modificar"/>
+                        <input id="cancelar" type="button" value="Cancelar" onclick=<?php echo "location.href='index.php?id=$codigo'"?>>
+                        <div></div>
+                    </fieldset>
+                </form>
                 <?php 
             } 
         } else { 
