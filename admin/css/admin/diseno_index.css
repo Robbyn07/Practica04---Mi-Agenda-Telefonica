@@ -1,0 +1,93 @@
+html{
+    background-color: royalblue;
+}
+
+:link{
+    text-decoration: none;
+}
+
+header h1{
+    text-align: center;
+}
+
+#logo_principal{
+    width: 25%;   
+    float: left;
+}
+
+#fieldset_busqueda{
+    width: 50%;  
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 50px;
+    float: left;
+}
+
+.iconos{
+    width: 5%;
+    margin-top: 25px;
+    float: left;
+    text-align: center;
+    display: block;
+}
+
+.jump{
+    width: 100%;
+    height: 5px;
+    clear: both;
+}
+
+.navegacion_principal{
+    width: 100%;
+}
+
+.navegacion_principal li{
+    width: 25%;
+    list-style-type: none;
+    text-align: center;
+    float: left;
+}
+
+body h5{
+    position: absolute;
+    visibility: hidden;
+}
+
+#informacion{
+    width: 100%;
+    float: left;
+    background-color: ivory;
+    border: black solid;
+}
+
+#general{
+    width: 48%;
+    padding: 10px 20px;
+    float: left;
+    border: black solid;
+}
+
+body p{
+    text-align: justify;
+}
+
+body h3{
+    text-align: center;
+}
+
+#img_general{
+    width: 48%;
+    float: right;
+    border: black solid;
+}
+
+#img_general img{
+    width: 50%;
+    padding: 10px 190px;
+}
+
+#galeria{
+    width: 100%;
+    border: black solid;
+    background-color: teal;
+}
