@@ -63,7 +63,7 @@
 
                         <input id="modificar" type="submit" value="Modificar"/>
                         <input id="cancelar" type="button" value="Cancelar" onclick=<?php echo "location.href='index.php?id=$codigo'"?>>
-                        <input id="eliminar" type="button" value="Eliminar"/>
+                        <input id="eliminar" type="button" value="Eliminar" onclick=<?php echo "location.href='../../controladores/usuario/eliminar_usuario.php?id=$codigo'"?>/>
                         <div></div>
                     </fieldset>
                 </form>

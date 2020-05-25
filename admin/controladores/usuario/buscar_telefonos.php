@@ -22,8 +22,8 @@
                 echo "<tr>";
                 echo " <td>" . $row['tel_operadora'] ."</td>";
                 echo " <td>" . $row['tel_tipo'] ."</td>";
-                echo " <td> <a href='eliminar_tel.php?id=" . $row['tel_id'] . "'>Eliminar</a> </td>"; 
-                echo " <td> <a href='modificar_tel.php?id=" . $row['tel_id'] . "'>Modificar</a> </td>";
+                echo " <td> <a href='modificar_telefono.php?id=" . $row['tel_id'] . "&usu=" . $codigo . "'>Modificar</a> </td>";
+                echo " <td> <a href='../../controladores/usuario/eliminar_telefono.php?id=" . $row['tel_id'] . "&usu=" . $codigo . "'>Eliminar</a> </td>";  
                 echo "</tr>";
                 
             }
@@ -50,8 +50,8 @@
                 echo "<tr>";
                 echo " <td>" . $row['tel_numero'] ."</td>";
                 echo " <td>" . $row['tel_tipo'] ."</td>";
-                echo " <td> <a href='eliminar_tel.php?id=" . $row['tel_id'] . "'>Eliminar</a> </td>"; 
-                echo " <td> <a href='modificar_tel.php?id=" . $row['tel_id'] . "'>Modificar</a> </td>";
+                echo " <td> <a href='modificar_telefono.php?id=" . $row['tel_id'] . "&usu=" . $codigo . "'>Modificar</a> </td>";
+                echo " <td> <a href='../../controladores/usuario/eliminar_telefono.php?id=" . $row['tel_id'] . "&usu=" . $codigo . "'>Eliminar</a> </td>";  
                 echo "</tr>";
             }
         } else {
@@ -77,8 +77,8 @@
                 echo "<tr>";
                 echo " <td>" . $row['tel_numero'] ."</td>";
                 echo " <td>" . $row['tel_operadora'] ."</td>";
-                echo " <td> <a href='eliminar_tel.php?id=" . $row['tel_id'] . "'>Eliminar</a> </td>"; 
-                echo " <td> <a href='modificar_tel.php?id=" . $row['tel_id'] . "'>Modificar</a> </td>";
+                echo " <td> <a href='modificar_telefono.php?id=" . $row['tel_id'] . "&usu=" . $codigo . "'>Modificar</a> </td>";
+                echo " <td> <a href='../../controladores/usuario/eliminar_telefono.php?id=" . $row['tel_id'] . "&usu=" . $codigo . "'>Eliminar</a> </td>"; 
                 echo "</tr>";
             }
         } else {

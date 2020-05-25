@@ -91,10 +91,6 @@ function validarOperadoraTipo(atri, men,id){
     return bandera;
 }
 
-
-
-
-
 //FORMATO ERROR/ARREGLO
 function error(inp, spa, men){
     document.getElementById(spa).innerHTML = men;
