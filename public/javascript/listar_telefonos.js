@@ -19,12 +19,13 @@ function buscarPorCedula() {
     xmlhttp.open("GET","../controladores/listar_telefonos.php?cedula="+cedula+"&correo="+"",true);
     xmlhttp.send();
     }
+
     return false;
 }
 
 function buscarPorCorreo() {
     var correo = document.getElementById("correo").value;
-    if (cedula == "") {
+    if (correo == "") {
         document.getElementById("informacion").innerHTML = "";
     } else {
         if (window.XMLHttpRequest) {
@@ -43,5 +44,6 @@ function buscarPorCorreo() {
     xmlhttp.open("GET","../controladores/listar_telefonos.php?correo="+correo+"&cedula="+"",true);
     xmlhttp.send();
     }
+    
     return false;
 }

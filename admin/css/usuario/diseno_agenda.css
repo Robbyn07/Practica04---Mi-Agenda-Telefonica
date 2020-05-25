@@ -1,0 +1,44 @@
+body{
+    background-color: rgb(232,241,232);
+}
+
+form{
+    background-color: rgb(229, 243, 244);
+}
+
+#separador{
+    margin-bottom: 20px;
+    clear: both;
+}
+
+input, select{
+    float: left;
+    margin-right: 20px;
+    margin-top: 20px;
+}
+
+#numero, #operadora, #tipo{
+    margin-left: 43%;
+}
+
+h2{
+    margin-left: 45%;
+    padding-top: 100px;
+    margin-bottom: 50px;
+    clear: both;
+}
+
+th, td{
+    border: solid black;
+}
+
+#informacion{
+    width: 40%;
+    margin-left: 30%;
+}
+
+#cancelar{
+    clear: both;
+    margin-left: 49%;
+    width: 100px;
+}
