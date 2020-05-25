@@ -7,7 +7,6 @@ form{
     margin-left: 40%;
     background-color: rgb(229, 243, 244);
     width: 500px;
-
 }
 
 #separador{
@@ -22,8 +21,7 @@ form label{
     font-weight: bold;
 }
 
-
-input[type=text], input[type=password]{
+input[type=password]{
     margin-left: 50px;
     width: 400px;
     background-color: rgb(243, 243, 243);

@@ -27,13 +27,13 @@
         if ($result->num_rows > 0) { 
             while($row = $result->fetch_assoc()) { 
                 ?> 
-                <form method="POST" onsubmit="return validacion(this)" action="../../controladores/usuario/modificar_contra.php">
+                <form method="POST" onsubmit="return validacion()" action="../../controladores/usuario/modificar_contra.php">
                     <fieldset>
                         <legend>Formulario</legend>
 
                         <input type="hidden" id="id" name="id" value="<?php echo $codigo ?>" /> 
                         
-                        <label for="nombres">Constraseña Actual</label>
+                        <label>Constraseña Actual</label>
                         <input type="password" id="contrasena" name="contrasena" value="" placeholder="Ingrese su contraseña actual..."/>
 
                         <label>Nueva Contraseña</label>

@@ -1,4 +1,4 @@
-var bandera;
+var bandera = false;
 
 //FORMATO ERROR/ARREGLO
 function error(inp, spa, men){
@@ -50,10 +50,13 @@ function verificarContrasena(contra_e){
         error(document.getElementById('password'), 'mcontrasena', '<br>Contraseña muy corta')
         bandera = false;
     }
+
+    console.log("Este es el valor de la bandera: " + bandera)
+
     return bandera;
 }
 
-function validacion(formulario){
+function validacion(){
     if(bandera == false){
         return false;
     }else{
