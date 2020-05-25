@@ -1,4 +1,3 @@
-
 body{
     background-color: rgb(232,241,232);
 }
@@ -7,7 +6,7 @@ body{
 fieldset{
     background-color: rgb(229, 243, 244);
     width: 500px;
-    margin: 10% 35%;
+    margin: 20px 35%;
 }
 
 form label{
@@ -46,13 +45,18 @@ input#agregar{
     color: red;
 }
 
+
 div{
     clear: both;
 }
 
-#id{
+th, td{
+    width: 200px;
+    border: solid black;
+    text-align: center;
+}
+
+.ocultar{
     visibility: hidden;
 }
-http://localhost/practica04---mi-agenda-telefonica/admin/vista/admin/agregar_usuario.php?id=35
-file:///D:/trabajos%20ups/trabajos%206%20ciclo/PROGRAMACION%20HIPERMEDIAL/Practica4/Pra%CC%81ctica%20de%20laboratorio%2004%20%20-%20Creacio%CC%81n%20de%20una%20aplicacio%CC%81n%20web%20usando%20PHP%20y%20Base%20de%20Datos.pdf
-file:///D:/trabajos%20ups/trabajos%206%20ciclo/PROGRAMACION%20HIPERMEDIAL/5.%20PHP.pdf
+
