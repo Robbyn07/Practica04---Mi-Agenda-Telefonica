@@ -2,16 +2,10 @@ body{
     background-color: rgb(232,241,232);
 }
 
-form{
-    margin-top: 10%;
-    margin-left: 40%;
+fieldset{
     background-color: rgb(229, 243, 244);
-    width: 500px;
-}
-
-#separador{
-    clear: both;
-    margin-bottom: 20px;
+    width: 30%;
+    margin: 10% 35%;
 }
 
 form label{
@@ -22,8 +16,8 @@ form label{
 }
 
 input[type=text], input[type=password]{
-    margin-left: 50px;
-    width: 400px;
+    margin-left: 8%;
+    width: 80%;
     background-color: rgb(243, 243, 243);
 }
 
@@ -33,7 +27,7 @@ input[type=submit], #cancelar{
 }
 
 input#login{
-    margin-right: 45px;
+    margin-right: 8%;
 }
 
 div{

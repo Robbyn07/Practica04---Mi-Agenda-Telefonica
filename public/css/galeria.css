@@ -11,21 +11,20 @@ html{
     height: 500px;
     margin-left: 1%;
     margin-right: 1%;
-    /*192/108*/
 }
 
 #galeria div#d1{
-    float: left;
     width: 50%;
     height: 300px;
     margin-left: 23%;
+    float: left;
     position: absolute;
 }
 #galeria div#d2{
-    float: left;
     width: 50%;
     height: 300px;
     margin-left: 100%;
+    float: left;
     position: absolute;
     visibility: hidden;
 }
@@ -36,15 +35,16 @@ html{
 }
 
 #galeria input[type='button']{
-    margin-top: 350px;
+    margin-top: 325px;
+    margin-bottom: 10px;
     width: 20%;
-    height: 50px;
-    float: left;
+    height: 30px;
     background-color: rgb(250, 252, 200);
     border-radius: 5px;
     margin-left: 10px;
     font-size: 100%;
     font-weight: bold;
+    float: left;
 }
 
 #galeria #anterior{

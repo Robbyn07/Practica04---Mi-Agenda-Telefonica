@@ -1,25 +1,24 @@
-var vgeneral = [false, false, false, false, false, false, false, false, false, false, false];
+var vgeneral = [false, false, false, false, false, false, false, false, false, false];
 
 function validacion(formulario){
     var bandera = true;
-    for(var i=0; i<11 ; i++){
+    for(var i=0; i<10 ; i++){
         if(vgeneral[i]==false){
             bandera = false;
-            i = 11;
+            i = 10;
         }
     }
     if(bandera!==true){
         validarCedula(0);
-        validarRol(1);
-        validarNA(document.getElementById('name'), 'mnombre',2);
-        validarNA(document.getElementById('lastname'), 'mapellido',3)
-        verificarDT(document.getElementById('address'), 'mdireccion',4);
-        verificarDT(document.getElementById('telf'), 'mtelefono',5);
-        verificarOperadoraTipo('oper' , 'moper', 6)
-        verificarOperadoraTipo('tipo', 'mtipo', 7)
-        validarFecha(8);
-        verificarCorreo(9);
-        verificarContrasena(10);
+        validarNA(document.getElementById('name'), 'mnombre',1);
+        validarNA(document.getElementById('lastname'), 'mapellido',2)
+        verificarDT(document.getElementById('address'), 'mdireccion',3);
+        verificarDT(document.getElementById('telf'), 'mtelefono',4);
+        verificarOperadoraTipo('oper' , 'moper', 5)
+        verificarOperadoraTipo('tipo', 'mtipo', 6)
+        validarFecha(7);
+        verificarCorreo(8);
+        verificarContrasena(9);
     }
 
     return bandera;
@@ -58,21 +57,6 @@ function noNumeros(texto){
     }else{
     return true;
     }
-}
-
-function validarRol(id){
-    bandera = false;
-    rol = document.getElementById('rol').value;
-    if(rol=='A' || rol=='a' || rol=='U' || rol=='u'){
-        arreglo(document.getElementById('rol'), 'mrol');
-        bandera = true;
-        vgeneral[id]=bandera;
-    }else{
-        error(document.getElementById('rol'), 'mrol', '<br>Este campo solo admite A/U/a/u')
-        bandera = false;
-        vgeneral[id]=bandera;
-    }
-    return bandera;
 }
 
 function validarOperadoraTipo(atri, men,id){

@@ -1,14 +1,14 @@
 html{
-    background-color: aquamarine;
+    background-color: rgb(232,241,232);
 }
 
 :link{
     text-decoration: none;
-    color: ivory !important;
+    color: darkcyan;
 }
 
 :visited{
-    color: ivory !important;
+    color: darkcyan;
 }
 
 body p{
@@ -61,7 +61,7 @@ header {
 }
 
 .navegacion_principal li{
-    width: 20%;
+    width: 33%;
     list-style-type: none;
     text-align: center;
     float: left;
@@ -94,11 +94,7 @@ header {
     width: 100%;
     text-align: center;
 }
-/*
-#galeria{
-    width: 100%;
-}
-*/
+
 #algo{
     width: 100%;
     border: black solid;
@@ -106,17 +102,24 @@ header {
     float: left;
 }
 
+#algo_img{
+    width: 20%;
+    padding: 10px 50px;
+    float: left;
+}
+
 #algo article{
     width: 68%;
-    padding: 10px 20px;
-    float: right;
+    padding: 70px 20px;
+    float: left;
 }
 
 #autores{
     width: 100%;
+    padding-bottom: 10px;
     float: left;
     border: black solid;
-    background-color: blanchedalmond;
+    background-color: ivory;
 }
 
 #pablo{
@@ -125,16 +128,28 @@ header {
     float: left;
 }
 
+#pablo img{
+    border-radius: 50px;
+}
+
 #robbyn{
     width: 25%;
     padding-right: 15%;
     float: right;
 }
 
+#robbyn img{
+    border-radius: 50px;
+}
+
+.image_description{
+    padding-left: 13%;
+    padding-bottom: 15px;
+}
+
 footer{
     width: 100%;
     float: left;
-    background-color: yellowgreen;
     clear: both;
 }
 

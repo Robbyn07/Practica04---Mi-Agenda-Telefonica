@@ -1,23 +1,22 @@
-var vgeneral = [false, false, false, false, false, false, false];
+var vgeneral = [false, false, false, false, false, false];
 
 function validacion(formulario){
     var bandera = true;
 
-    for(var i=0; i<7 ; i++){
+    for(var i=0; i<6 ; i++){
         if(vgeneral[i]==false){
             bandera = false;
-            i = 7;
+            i = 6;
         }
     }
 
     if(bandera!==true){
         validarCedula(0);
-        validarRol(1);
-        validarNA(document.getElementById('name'), 'mnombre',2);
-        validarNA(document.getElementById('lastname'), 'mapellido',3)
-        verificarDT(document.getElementById('address'), 'mdireccion',4);
-        validarFecha(5);
-        verificarCorreo(6);
+        validarNA(document.getElementById('name'), 'mnombre',1);
+        validarNA(document.getElementById('lastname'), 'mapellido',2)
+        verificarDT(document.getElementById('address'), 'mdireccion',3);
+        validarFecha(4);
+        verificarCorreo(5);
     }
 
     return bandera;
@@ -56,21 +55,6 @@ function noNumeros(texto){
     }else{
     return true;
     }
-}
-
-function validarRol(id){
-    bandera = false;
-    rol = document.getElementById('rol').value;
-    if(rol=='A' || rol=='a' || rol=='U' || rol=='u'){
-        arreglo(document.getElementById('rol'), 'mrol');
-        bandera = true;
-        vgeneral[id]=bandera;
-    }else{
-        error(document.getElementById('rol'), 'mrol', '<br>Este campo solo admite A/U/a/u')
-        bandera = false;
-        vgeneral[id]=bandera;
-    }
-    return bandera;
 }
 
 //FORMATO ERROR/ARREGLO

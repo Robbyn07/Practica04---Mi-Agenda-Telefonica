@@ -4,6 +4,7 @@ body{
 
 form{
     background-color: rgb(229, 243, 244);
+    border-bottom: solid black;
 }
 
 #separador{
@@ -27,7 +28,6 @@ input{
 
 h2{
     margin-left: 45%;
-    padding-top: 100px;
     margin-bottom: 50px;
     clear: both;
 }

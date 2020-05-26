@@ -31,9 +31,8 @@
             echo "<p>Error: " . $sql . "<br>" . mysqli_error($conn) . "</p>"; 
         } 
         
-        echo "<a href='../../vista/usuario/agenda.php?id=$codigo'>Regresar</a>"; 
-        
         $conn->close();
+        echo "<a href='../vista/crear_usuario.html'>Regresar</a>";
     ?> 
 </body> 
 

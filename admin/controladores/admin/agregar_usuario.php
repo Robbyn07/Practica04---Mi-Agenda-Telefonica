@@ -14,7 +14,6 @@
     include '../../../config/conexionBD.php';
     $id = $_POST["id"];
     $cedula = isset($_POST["dni"]) ? trim($_POST["dni"]) : null;
-    $rol = isset($_POST["rol"]) ? mb_strtoupper(trim($_POST["rol"]), 'UTF-8') : null;
     $nombres = isset($_POST["name"]) ? mb_strtoupper(trim($_POST["name"]), 'UTF-8') : null;
     $apellidos = isset($_POST["lastname"]) ? mb_strtoupper(trim($_POST["lastname"]), 'UTF-8') : null;
     $direccion = isset($_POST["address"]) ? mb_strtoupper(trim($_POST["address"]), 'UTF-8') : null;
@@ -31,7 +30,7 @@
     $ver2 = $conn->query($vercor);
 
     if($ver1->num_rows==0 && $ver2->num_rows==0){
-        $sql = "INSERT INTO usuario VALUES (0, '$rol', '$cedula', '$nombres', '$apellidos', '$direccion', '$correo', 
+        $sql = "INSERT INTO usuario VALUES (0, 'U','$cedula', '$nombres', '$apellidos', '$direccion', '$correo', 
             MD5('$contrasena'), '$fechaNacimiento', 'N', null, null)";
 
 

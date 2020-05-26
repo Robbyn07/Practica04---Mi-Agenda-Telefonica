@@ -20,7 +20,6 @@
         include '../../../config/conexionBD.php'; 
         
         $codigo = $_POST["id"]; 
-        $rol = isset($_POST["rol"]) ? mb_strtoupper(trim($_POST["rol"]), 'UTF-8') : null;
         $cedula = isset($_POST["dni"]) ? trim($_POST["dni"]) : null; 
         $nombres = isset($_POST["name"]) ? mb_strtoupper(trim($_POST["name"]), 'UTF-8') : null; 
         $apellidos = isset($_POST["lastname"]) ? mb_strtoupper(trim($_POST["lastname"]), 'UTF-8') : null; 
@@ -31,7 +30,7 @@
         date_default_timezone_set("America/Guayaquil"); 
         $fecha = date('Y-m-d H:i:s', time()); 
         
-        $sql = "UPDATE usuario " . "SET usu_rol = '$rol', " . "usu_cedula = '$cedula', " . "usu_nombres = '$nombres', " . "usu_apellidos = '$apellidos', " . 
+        $sql = "UPDATE usuario " . "SET usu_cedula = '$cedula', " . "usu_nombres = '$nombres', " . "usu_apellidos = '$apellidos', " . 
         "usu_direccion = '$direccion', " . "usu_fecha_nacimiento = '$fechaNacimiento', " . "usu_correo = '$correo', " . "usu_fecha_modificacion = '$fecha' " . 
         "WHERE usu_id = $codigo"; 
         

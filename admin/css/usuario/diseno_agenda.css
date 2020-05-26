@@ -1,7 +1,3 @@
-/**{
-    border: black solid;
-}
-*/
 body{
     background-color: rgb(232,241,232);
 }
@@ -9,7 +5,16 @@ body{
 #form1, #form2{
     width: 100%;
     background-color: rgb(229, 243, 244);
+    border-bottom: black solid;
     float: left;
+}
+
+input[type=text]{
+    width: 10%;
+}
+
+select{
+    width: 10.5%;
 }
 
 #separador{
@@ -20,6 +25,7 @@ body{
 
 input, select{
     margin-right: 20px;
+    margin-left: 10px;
     margin-top: 10px;
     float: left;
 }
@@ -28,7 +34,11 @@ input, select{
     margin-left: 43%;
 }
 
-#telf, #oper, #tip{
+#oper, #tip{
+    margin-left: 45.5%;
+}
+
+#label_tel{
     margin-left: 43%;
 }
 
@@ -41,9 +51,13 @@ th, td{
     border: solid black;
 }
 
+th{
+    background-color: darkcyan;
+}
+
 .error{
-    display: block;
     margin-left: 50px;
+    display: block;
     font-style: italic;
     color: red;
 }
@@ -55,9 +69,9 @@ th, td{
 }
 
 #cancelar, #agregar{
-    clear: both;
     margin-left: 47.5%;
     width: 100px;
+    clear: both;
 }
 
 #agregar_telefono, #listar_telefono{
@@ -66,9 +80,11 @@ th, td{
 }
 
 #form2 label{
-    margin-top: 20px;
+    margin-top: 10px;
+    width: max-content;
     display: block;
     font-weight: bold;
+    float: left;
 }
 
 #informacion2{

@@ -1,8 +1,6 @@
-
 body{
     background-color: rgb(232,241,232);
 }
-
 
 fieldset{
     background-color: rgb(229, 243, 244);
@@ -17,7 +15,6 @@ form label{
     font-weight: bold;
 }
 
-
 input[type=text], input[type=password]{
     margin-left: 50px;
     width: 400px;
@@ -27,12 +24,6 @@ input[type=text], input[type=password]{
 input[type=submit], #cancelar{
     float: right;
     margin-top: 20px;
-}
-
-select{
-    margin-left: 50px;
-    width: 400px;
-    background-color: rgb(243, 243, 243);
 }
 
 input#agregar{
@@ -45,7 +36,6 @@ input#agregar{
     font-style: italic;
     color: red;
 }
-
 
 div{
     clear: both;

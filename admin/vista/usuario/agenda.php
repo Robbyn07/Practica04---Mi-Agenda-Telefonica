@@ -41,6 +41,7 @@
         <input type="button" id="buscartipo" name="buscartipo" value="Buscar por tipo" onclick="buscarPorTipo(<?php echo $codigo?>)">
 
         <input type="button" id="cancelar" name="cancelar" value="Cancelar" onclick=<?php echo "location.href='index.php?id=$codigo'"?>>
+        
         <div id="separador"></div>
     </form>
 
@@ -51,13 +52,13 @@
 
     <section id="agregar_telefono">
         <form id="form2" method="POST" onsubmit="return validacion()" action="../../controladores/usuario/agregar_telefono.php">
-            <legend>Agregar Telefono</legend>
             <input type="hidden" id="id" name="id" value="<?php echo $codigo ?>" /> 
             <br>
-            <label for="telf">Telefono</label>
+
+            <label id="label_tel" for="telf">Telefono: </label>
             <input type="text" id="telf" name="telf" placeholder="Ej. 9999999999" onkeyup="return noLetras(this), verificarDT(this, 'mtelefono',0)"/>
             <span id="mtelefono" class="error"></span>
-
+            
             <select name="oper" id="oper">
                 <option value="claro" selected>Claro</option>
                 <option value="movistar">Movistar</option>
@@ -72,6 +73,8 @@
 
             <input id="agregar" type="submit" value="Agregar"/>
             <input id="cancelar" type="button" value="Cancelar" onclick=<?php echo "location.href='index.php?id=$codigo'"?>>
+        
+            <div id="separador"></div>
         </form>
     </section>
 
