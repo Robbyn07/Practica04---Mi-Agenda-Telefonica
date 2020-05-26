@@ -6,12 +6,15 @@
     $senial = false;
     
     if($cedula!=''){
-        $sql = "SELECT usu_id FROM usuario WHERE usu_cedula='$cedula'";
+        $sql = "SELECT usu_id, usu_correo, usu_nombres, usu_apellidos FROM usuario WHERE usu_cedula='$cedula'";
         $result = $conn->query($sql);
         $senial = false;
         if ($result->num_rows > 0) {
             while($row = $result->fetch_assoc()) {
                 $usu_id =  $row["usu_id"];
+                $usu_correo = $row["usu_correo"];
+                $usu_nombres = $row['usu_nombres'];
+                $usu_apellidos = $row['usu_apellidos'];
             }
             $senial = true;
         } else {
@@ -19,12 +22,15 @@
            $senial = false;
         }
     }elseif($correo!=''){
-        $sql = "SELECT usu_id FROM usuario WHERE usu_correo='$correo'";
+        $sql = "SELECT usu_id, usu_correo, usu_nombres, usu_apellidos FROM usuario WHERE usu_correo='$correo'";
         $result = $conn->query($sql);
         $senial = false;
         if ($result->num_rows > 0) {
             while($row = $result->fetch_assoc()) {
                 $usu_id =  $row["usu_id"];
+                $usu_correo = $row["usu_correo"];
+                $usu_nombres = $row['usu_nombres'];
+                $usu_apellidos = $row['usu_apellidos'];
             }
             $senial = true;
         } else {
@@ -40,14 +46,28 @@
         $result = $conn->query($sql);
         echo " <table style='width:100%'>
         <tr>
+        <th>Nombres</th>
+        <th>Apellidos</th>
+        <th>Correo</th>
+        </tr>
+        <tr>
+        
+        <td> $usu_nombres  </td>
+        <td> $usu_apellidos </td>
+        <td> <a href='mailto:$usu_correo'>$usu_correo</a></td>
+        </tr>
+        <tr>
         <th>Numero</th>
         <th>Operadora</th>
+        <th>Tipo</th>
+
         </tr>";
         if ($result->num_rows > 0) {
             while($row = $result->fetch_assoc()) {
                 echo "<tr>";
-                echo " <td>" . $row['tel_numero'] . "</td>";
-                echo " <td>" . $row['tel_operadora'] ."</td>";
+                echo "<td> <a href='tel:+" . $row['tel_numero'] . "'>" . $row['tel_numero'] . "</a></td>";
+                echo "<td>" . $row['tel_operadora'] ."</td>";
+                echo "<td>".$row['tel_tipo']."</td>";
                 echo "</tr>";
             }
         } else {
