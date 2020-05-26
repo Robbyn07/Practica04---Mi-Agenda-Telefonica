@@ -15,7 +15,7 @@
     $operadora = isset($_POST["oper"]) ? mb_strtoupper(trim($_POST["oper"]), 'UTF-8'): null;
     $tipo = isset($_POST["tip"]) ? mb_strtoupper(trim($_POST["tip"]), 'UTF-8'): null;
 
-    $ver_telefono = "SELECT * WHERE tel_numero='$telefono' and tel_usuario=$codigo";
+    $ver_telefono = "SELECT * FROM telefono WHERE tel_numero='$telefono' and tel_usuario=$codigo";
     $sqlver = $conn->query($ver_telefono);
 
     if($sqlver->num_rows==0){

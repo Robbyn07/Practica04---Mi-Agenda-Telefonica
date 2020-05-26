@@ -27,7 +27,7 @@
 
   <input type="button" id="agregar" name="agregar" value="Agregar usuario" onclick=<?php echo "location.href='agregar_usuario.php?id=$id'" ?>> 
   <input type="button" id="modificar" name="modificar" value="Modificar y eliminar" onclick=<?php echo "location.href='modificar_usuario.php?id=$id'" ?>> 
-  <input type="button" id="agenda" name="agenda" value="Agenda" onclick="location.href='agenda.php'">
+  <input type="button" id="agenda" name="agenda" value="Agenda" onclick=<?php echo "location.href='agenda.php?id=$id'" ?>>
   <input type="button" id="cerrar_sesion" name="cerrar_sesion" value="Cerrar Sesion" onclick="location.href='../../../config/cerrar_sesion.php'">
 
 </body>

@@ -1,0 +1,21 @@
+td, th{
+    width: 1%;
+    border: solid black;
+}
+
+
+aside{
+    border: solid black;
+    width: 50%;
+    margin-left: 24%;
+    margin-bottom: 20px;
+}
+
+.telefono{
+    width: 35%;
+    margin-left: 30%;
+}
+
+
+
+
