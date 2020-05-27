@@ -1,22 +1,21 @@
-var vgeneral = [false, false, false, false, false, false];
+var vgeneral = [false, false, false, false, false];
 
 function validacion(formulario){
     var bandera = true;
 
-    for(var i=0; i<6 ; i++){
+    for(var i=0; i<5 ; i++){
         if(vgeneral[i]==false){
             bandera = false;
-            i = 6;
+            i = 5;
         }
     }
 
     if(bandera!==true){
-        validarCedula(0);
-        validarNA(document.getElementById('name'), 'mnombre',1);
-        validarNA(document.getElementById('lastname'), 'mapellido',2)
-        verificarDT(document.getElementById('address'), 'mdireccion',3);
-        validarFecha(4);
-        verificarCorreo(5);
+        validarNA(document.getElementById('name'), 'mnombre',0);
+        validarNA(document.getElementById('lastname'), 'mapellido',1)
+        verificarDT(document.getElementById('address'), 'mdireccion',2);
+        validarFecha(3);
+        verificarCorreo(4);
     }
 
     return bandera;
@@ -68,45 +67,6 @@ function arreglo(inp, spa){
     document.getElementById(spa).innerHTML = '';
     inp.style.border = '2px green solid';
     inp.className = 'none';
-}
-
-//VALIDACION CEDULA
-function validarCedula (id){
-    var bandera = true;
-    var ced = document.getElementById("dni");
-    if(ced.value.length!==10 && ced.type == 'text'){
-        error(ced, 'mcedula', '<br>Datos invalidos')
-        bandera = false;
-        vgeneral[id]=bandera;
-    }else{
-        var suma =0;
-        for(var i=0; i<(ced.value.length-1); i++){
-            var num = ced.value.charCodeAt(i) - 48;
-            if(i%2==0){
-                num = num*2;
-                if(num>=10){
-                    num = num-9;
-                }
-            }
-            suma = suma + num;
-        }
-        console.log(suma)
-        suma = suma/10;
-        console.log(suma)
-        var isuperior = Math.ceil(suma);
-        console.log(isuperior)
-        var resul = eval(isuperior*10-suma*10)
-        if(resul !== (ced.value.charCodeAt(9)-48)){
-            error(ced, 'mcedula', '<br>La cedula ingresada no es correcta')
-            bandera = false;
-            vgeneral[id]=bandera;
-        }else{
-            arreglo(ced, 'mcedula');
-            bandera = true;
-            vgeneral[id]=bandera;
-        }
-    }
-    return bandera;
 }
 
 //VALIDACION NOMBRES Y APELLIDOS

@@ -13,8 +13,13 @@ input[type=text]{
     width: 10%;
 }
 
+header, h2{
+    text-align: center;
+}
+
 select{
     width: 10.5%;
+    float: left;
 }
 
 #separador{
@@ -42,12 +47,8 @@ input, select{
     margin-left: 43%;
 }
 
-h2{
-    text-align: center;
-    clear: both;
-}
-
 th, td{
+    text-align: center;
     border: solid black;
 }
 
@@ -56,10 +57,15 @@ th{
 }
 
 .error{
-    margin-left: 50px;
     display: block;
     font-style: italic;
     color: red;
+    float: left;
+}
+
+#mtelefono{
+    width: 100%;
+    padding-left: 46.5%;
 }
 
 #informacion{

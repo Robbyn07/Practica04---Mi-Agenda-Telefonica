@@ -23,15 +23,14 @@
 
         if($conn -> query($sql) === TRUE){
             echo "<p>Se ha creado el nuevo telefono!!!</p>";
-            #header ("Location: ../../vista/usuario/agenda.php?id=$codigo");
+            header ("Location: ../../vista/usuario/agenda.php?id=$codigo");
         }else{ 
             echo "<p class='error'>Error: " . mysqli_error($conn) . "</p>"; 
         }
     }else{
-        echo "<p class='error'>Error 1: El telefono $telefono ya esta registrado en el sistema </p>"; 
-    }    
+        header ("Location: ../../vista/usuario/agenda.php?id=$codigo");
+    }
 
     $conn->close();
-    echo "<a href='../../vista/usuario/index.php?id=$codigo'>Regresar</a>";
 ?>
 

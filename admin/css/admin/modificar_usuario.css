@@ -2,6 +2,10 @@ body{
     background-color: rgb(232,241,232);
 }
 
+header{
+    padding-bottom: 20px;
+    text-align: center;
+}
 
 fieldset{
     background-color: rgb(229, 243, 244);
@@ -15,7 +19,6 @@ form label{
     display: block;
     font-weight: bold;
 }
-
 
 input[type=text], input[type=password]{
     margin-left: 50px;
@@ -45,15 +48,18 @@ input#agregar{
     color: red;
 }
 
-
 div{
     clear: both;
 }
 
 th, td{
-    width: 200px;
+    width: 10%;
     border: solid black;
     text-align: center;
+}
+
+th{
+    background-color: darkcyan;
 }
 
 .ocultar{

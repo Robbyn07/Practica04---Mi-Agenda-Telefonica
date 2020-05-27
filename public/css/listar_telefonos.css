@@ -2,6 +2,10 @@ body{
     background-color: rgb(232,241,232);
 }
 
+header{
+    text-align: center;
+}
+
 form{
     background-color: rgb(229, 243, 244);
     border-bottom: solid black;
@@ -33,6 +37,7 @@ h2{
 }
 
 th, td{
+    text-align: center;
     border: solid black;
 }
 

@@ -2,6 +2,10 @@ body{
     background-color: rgb(232,241,232);
 }
 
+header{
+    text-align: center;
+}
+
 fieldset{
     background-color: rgb(229, 243, 244);
     width: 500px;

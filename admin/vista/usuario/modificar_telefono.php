@@ -15,12 +15,16 @@
         if(!isset($_SESSION['isLogged']) || $_SESSION['isLogged'] === FALSE){ 
             header("Location: ../../../public/vista/index.html"); 
         } 
-    ?>
 
-    <?php
         $codigo_tel = $_GET["id"]; 
         $codigo_usu = $_GET["usu"];
+    ?>
 
+    <header>
+        <a href="index.php?id=<?php echo $codigo_usu ?>"><img id="logo_principal" src="../../contenido/logo_ups.png" alt="logo"></a>
+    </header>
+
+    <?php
         $sql = "SELECT * FROM telefono where tel_usuario=$codigo_usu and tel_id=$codigo_tel"; 
 
         include '../../../config/conexionBD.php'; 

@@ -75,9 +75,14 @@ header {
 }
 
 #general{
-    width: 48%;
-    padding: 10px 20px;
+    width: 49%;
+    padding-top: 50px;
+    padding-left: 3%;
     float: left;
+}
+
+#buttons{
+    text-align: center;
 }
 
 #img_general{

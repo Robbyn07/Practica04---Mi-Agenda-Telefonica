@@ -16,7 +16,6 @@
     ?>
 
     <?php 
-        //incluir conexión a la base de datos 
         include '../../../config/conexionBD.php'; 
 
         $codigo = $_POST["id"];
@@ -34,15 +33,12 @@
             
             if ($conn->query($sql2) === TRUE) { 
                 echo "Se ha actualizado la contrasena correctamente!!!<br>"; 
+                header ("Location: ../../vista/usuario/index.php?id=$codigo");
             } else { 
                 echo "Error: " . $sql . "<br>" . mysqli_error($conn) . "<br>"; 
             } 
             
-        }else{
-            echo "<p>La contraseña actual no coincide con nuestros registros!!! </p>";
         }
-
-        echo "<a href='../../vista/usuario/index.php?id=$codigo'>Regresar</a>";
  
         $conn->close(); 
     ?>

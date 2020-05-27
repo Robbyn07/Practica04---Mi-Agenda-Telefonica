@@ -1,5 +1,10 @@
 body{
-    background-color: wheat;
+    /*background-color: wheat;*/
+    background-color: rgb(232,241,232);
+}
+
+header{
+    text-align: center;
 }
 
 h1{
@@ -7,14 +12,20 @@ h1{
     color: steelblue;
 }
 
+section{
+    text-align: center;
+}
+
 input{
     width: 40%;
     height: 400px;
     background-color: rgb(229, 243, 244);
     font-size: 180%;
+    margin: 10px 10px;
     font-weight: bold;
 }
 
 input:hover{
     background-color: #FFFCBA;
+    /*background-color: darkcyan;*/
 }

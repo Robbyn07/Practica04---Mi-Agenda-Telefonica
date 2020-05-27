@@ -1,3 +1,11 @@
+<?php 
+    session_start(); 
+    
+    if(!isset($_SESSION['isLogged']) || $_SESSION['isLogged'] === FALSE){ 
+        header("Location: ../../../public/vista/index.html"); 
+    } 
+?>
+
 <?php
     include '../../../config/conexionBD.php';
     $usuario = $_GET["usuario"];
@@ -29,7 +37,4 @@
                     <input type='text' class='ocultar' name='cedula' value=".$row['usu_cedula']."></input>
             </form>";
     }
-
-    
-
 ?>

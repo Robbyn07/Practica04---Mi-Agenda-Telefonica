@@ -1,15 +1,21 @@
+<?php 
+        session_start(); 
+        
+        if(!isset($_SESSION['isLogged']) || $_SESSION['isLogged'] === FALSE){ 
+            header("Location: ../../../public/vista/index.html"); 
+        } 
+    ?>
+
 <?php
-    
     include "../../../config/conexionBD.php";
     $cedula = $_GET['cedula'];
     $correo = $_GET['correo'];
-
-    
     
     if($cedula!=''){
         $sql = "SELECT * FROM usuario WHERE usu_cedula='$cedula' AND usu_eliminado='N'";
         $result = $conn->query($sql);
         $senial = false;
+
         if ($result->num_rows > 0) {
             while($row = $result->fetch_assoc()) {
                 echo "<aside>";
@@ -33,8 +39,10 @@
                 echo "<td>".$row["usu_fecha_nacimiento"]."</td>";
                 echo "</tr>";
                 echo "</table>";
-                $sql2 = "SELECT * FROM telefono WHERE tel_eliminado='N' tel_usuario=".$row['usu_id'];
+
+                $sql2 = "SELECT * FROM telefono WHERE tel_eliminado='N' and tel_usuario=". $row['usu_id'];
                 $resultado2 = $conn->query($sql2);
+
                 if($resultado2->num_rows > 0){
                     while($row2 = $resultado2->fetch_assoc()){
                         echo "
@@ -62,6 +70,7 @@
         $sql = "SELECT * FROM usuario WHERE usu_correo='$correo' AND usu_eliminado='N'";
         $result = $conn->query($sql);
         $senial = false;
+
         if ($result->num_rows > 0) {
             while($row = $result->fetch_assoc()) {
                 echo "<aside>";
@@ -73,7 +82,7 @@
                         <th>Apellidos</th>
                         <th>Direccion</th>
                         <th>Correo</th>
-                        <th>Fehca de nacimiento</th>
+                        <th>Fecha de nacimiento</th>
                     </tr>
                 ";
                 echo "<tr>";
@@ -85,8 +94,9 @@
                 echo "<td>".$row["usu_fecha_nacimiento"]."</td>";
                 echo "</tr>";
                 echo "</table>";
-                $sql2 = "SELECT * FROM telefono WHERE tel_eliminado='N' tel_usuario=".$row['usu_id'];
+                $sql2 = "SELECT * FROM telefono WHERE tel_eliminado='N' and tel_usuario=".$row['usu_id'];
                 $resultado2 = $conn->query($sql2);
+
                 if($resultado2->num_rows > 0){
                     while($row2 = $resultado2->fetch_assoc()){
                         echo "
@@ -113,8 +123,5 @@
         }
     }
 
-    
-
-        
     $conn->close();
 ?>

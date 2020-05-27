@@ -4,7 +4,7 @@
 <head> 
     <meta charset="UTF-8"> 
     <title>Modificar Contrasenia</title> 
-    <link rel="stylesheet" type="text/css" href="../../css/diseno_cambiar_contrasena.css"/>
+    <link rel="stylesheet" type="text/css" href="../../css/usuario/diseno_cambiar_contrasena.css"/>
     <script type="text/javascript" src="../../javascript/validacion_contrasena.js"></script>
 </head> 
 
@@ -15,10 +15,15 @@
         if(!isset($_SESSION['isLogged']) || $_SESSION['isLogged'] === FALSE){ 
             header("Location: ../../../public/vista/index.html"); 
         } 
+
+        $codigo = $_GET["id"];
     ?>
 
-    <?php
-        $codigo = $_GET["id"]; 
+    <header>
+        <a href="index.php?id=<?php echo $codigo ?>"><img id="logo_principal" src="../../contenido/logo_ups.png" alt="logo"></a>
+    </header>
+
+    <?php 
         $sql = "SELECT * FROM usuario where usu_id=$codigo"; 
 
         include '../../../config/conexionBD.php'; 
@@ -41,7 +46,7 @@
                         <span id="mcontrasena" class="error"></span>
 
                         <input id="cambiar_contra" type="submit" value="Cambiar Contrasena"/>
-                        <input id="cancelar" type="button" value="Cancelar" onclick=<?php echo "location.href='index.php?id=$codigo'"?>>
+                        <input id="cancelar" type="button" value="Cancelar" onclick="location.href='index.php?id=<?php echo $codigo ?>'">
                         <div></div>
                     </fieldset>
                 </form>

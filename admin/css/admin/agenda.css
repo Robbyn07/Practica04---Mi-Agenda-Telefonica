@@ -1,8 +1,31 @@
+body{
+    background-color: rgb(232,241,232);
+}
+
 td, th{
     width: 1%;
+    text-align: center;
     border: solid black;
 }
 
+header, h2{
+    text-align: center;
+}
+
+form{
+    margin-left: 35%;
+    width: 30%;
+    text-align: center;
+}
+
+input{
+    margin: 5px 10px;
+}
+
+
+th{
+    background-color: darkcyan;
+}
 
 aside{
     border: solid black;

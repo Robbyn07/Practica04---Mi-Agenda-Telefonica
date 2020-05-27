@@ -20,6 +20,10 @@
     $cont = 0;
    ?>
    
+    <header>
+        <a href="index.php?id=<?php echo $id ?>"><img id="logo_principal" src="../../contenido/logo_ups.png" alt="logo"></a>
+    </header>
+
     <table id='cabecera'>
         <tr>
             <th>Cedula</th>
@@ -27,7 +31,7 @@
             <th>Apellidos</th>
             <th>Direccion</th>
             <th>Correo</th>
-            <th>Fehca de nacimiento</th>
+            <th>Fecha de nacimiento</th>
             <th>Modificar</th>
             <th>Eliminar</th>
             <th>Cambiar Contraseña</th>

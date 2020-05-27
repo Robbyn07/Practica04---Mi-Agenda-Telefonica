@@ -20,6 +20,10 @@
         } 
     ?>
 
+    <header>
+        <a href="index.php?id=<?php echo $codigo ?>"><img id="logo_principal" src="../../contenido/logo_ups.png" alt="logo"></a>
+    </header>
+
     <form id="form1" >
         <input type="text" id="numero" name="numero" value="">
         <input type="button" id="buscarnumero" name="buscarnumero" value="Buscar por numero" onclick="buscarPorNumero(<?php echo $codigo?>)">
@@ -38,9 +42,9 @@
             <option value="celular">Celular</option>
             <option value="convencional">Convencional</option>
         </select>
-        <input type="button" id="buscartipo" name="buscartipo" value="Buscar por tipo" onclick="buscarPorTipo(<?php echo $codigo?>)">
 
-        <input type="button" id="cancelar" name="cancelar" value="Cancelar" onclick=<?php echo "location.href='index.php?id=$codigo'"?>>
+        <input type="button" id="buscartipo" name="buscartipo" value="Buscar por tipo" onclick="buscarPorTipo(<?php echo $codigo?>)">
+        <input type="button" id="cancelar" name="cancelar" value="Cancelar" onclick="location.href='index.php?id=<?php echo $codigo ?>'">
         
         <div id="separador"></div>
     </form>
@@ -53,7 +57,6 @@
     <section id="agregar_telefono">
         <form id="form2" method="POST" onsubmit="return validacion()" action="../../controladores/usuario/agregar_telefono.php">
             <input type="hidden" id="id" name="id" value="<?php echo $codigo ?>" /> 
-            <br>
 
             <label id="label_tel" for="telf">Telefono: </label>
             <input type="text" id="telf" name="telf" placeholder="Ej. 9999999999" onkeyup="return noLetras(this), verificarDT(this, 'mtelefono',0)"/>
@@ -72,7 +75,7 @@
             </select>
 
             <input id="agregar" type="submit" value="Agregar"/>
-            <input id="cancelar" type="button" value="Cancelar" onclick=<?php echo "location.href='index.php?id=$codigo'"?>>
+            <input id="cancelar" type="button" value="Cancelar" onclick="location.href='index.php?id=<?php echo $codigo?>'">
         
             <div id="separador"></div>
         </form>

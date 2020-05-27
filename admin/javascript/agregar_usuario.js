@@ -1,25 +1,24 @@
-var vgeneral = [false, false, false, false, false, false, false, false, false, false, false];
+var vgeneral = [false, false, false, false, false, false, false, false, false, false];
 
 function validacion(formulario){
     var bandera = true;
-    for(var i=0; i<11 ; i++){
+    for(var i=0; i<10 ; i++){
         if(vgeneral[i]==false){
             bandera = false;
-            i = 11;
+            i = 10;
         }
     }
     if(bandera!==true){
         validarCedula(0);
-        validarRol(1);
-        validarNA(document.getElementById('name'), 'mnombre',2);
-        validarNA(document.getElementById('lastname'), 'mapellido',3)
-        verificarDT(document.getElementById('address'), 'mdireccion',4);
-        verificarDT(document.getElementById('telf'), 'mtelefono',5);
-        verificarOperadoraTipo('oper' , 'moper', 6)
-        verificarOperadoraTipo('tipo', 'mtipo', 7)
-        validarFecha(8);
-        verificarCorreo(9);
-        verificarContrasena(10);
+        validarNA(document.getElementById('name'), 'mnombre',1);
+        validarNA(document.getElementById('lastname'), 'mapellido',2)
+        verificarDT(document.getElementById('address'), 'mdireccion',3);
+        verificarDT(document.getElementById('telf'), 'mtelefono',4);
+        verificarOperadoraTipo('oper' , 'moper', 5)
+        verificarOperadoraTipo('tipo', 'mtipo', 6)
+        validarFecha(7);
+        verificarCorreo(8);
+        verificarContrasena(9);
     }
 
     return bandera;
@@ -60,21 +59,6 @@ function noNumeros(texto){
     }
 }
 
-function validarRol(id){
-    bandera = false;
-    rol = document.getElementById('rol').value;
-    if(rol=='A' || rol=='a' || rol=='U' || rol=='u'){
-        arreglo(document.getElementById('rol'), 'mrol');
-        bandera = true;
-        vgeneral[id]=bandera;
-    }else{
-        error(document.getElementById('rol'), 'mrol', '<br>Este campo solo admite A/U/a/u')
-        bandera = false;
-        vgeneral[id]=bandera;
-    }
-    return bandera;
-}
-
 function validarOperadoraTipo(atri, men,id){
     console.log('adad')
     bandera = false;
@@ -92,9 +76,6 @@ function validarOperadoraTipo(atri, men,id){
 }
 
 
-
-
-
 //FORMATO ERROR/ARREGLO
 function error(inp, spa, men){
     document.getElementById(spa).innerHTML = men;
@@ -106,7 +87,6 @@ function arreglo(inp, spa){
     inp.style.border = '2px green solid';
     inp.className = 'none';
 }
-
 
 //VALIDACION CEDULA
 function validarCedula (id){
@@ -147,7 +127,6 @@ function validarCedula (id){
     return bandera;
 }
 
-
 //VALIDACION NOMBRES Y APELLIDOS
 function validarNA(atri, men, id){
     var bandera = true;
@@ -169,7 +148,6 @@ function validarNA(atri, men, id){
     }
     return bandera;
 }
-
 
 //VALIDAR FECHA
 function soloFecha(fec){
@@ -251,7 +229,6 @@ function verificarCorreo(id){
         bandera = false;
         vgeneral[id]=bandera;
     }
-
 }
 
 //VERIFICAR CONTRASENIA

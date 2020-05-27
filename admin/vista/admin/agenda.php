@@ -18,22 +18,26 @@
     } 
     $id = $_GET['id'];
    ?>
+
+    <header>
+        <a href="index.php?id=<?php echo $id ?>"><img id="logo_principal" src="../../contenido/logo_ups.png" alt="logo"></a>
+    </header>
    
-   <form>
-        <input type="text" id="cedula" name="cedula" value="">
-        <input type="button" id="buscarcedula" name="buscarcedula" value="Buscar por cedula" onclick="buscarPorCedula()">
-        <input type="text" id="correo" name="correo" value="">
-        <input type="button" id="buscarcorreo" name="buscarcorreo" value="Buscar por correo" onclick="buscarPorCorreo()">
-        <input type="button" id="cancelar" name="volver" value="Volver a index" onclick=<?php echo "\"location.href='index.php?id=$id'\"" ?>">
-        <div id="separador"></div>
-    </form>
+    <div>
+        <form>
+            <input type="text" id="cedula" name="cedula" value="">
+            <input type="button" id="buscarcedula" name="buscarcedula" value="Buscar por cedula" onclick="buscarPorCedula()">
+            <input type="text" id="correo" name="correo" value="">
+            <input type="button" id="buscarcorreo" name="buscarcorreo" value="Buscar por correo" onclick="buscarPorCorreo()">
+            <br>
+            <input type="button" id="cancelar" name="volver" value="Volver" onclick=<?php echo "location.href='index.php?id=$id'" ?>>
+            <div id="separador"></div>
+        </form>
+    </div>
 
-    
     <div id="informacion"><b></b></div>
-
     <h2>Lista de usuarios</h2>
-    
-    
+
     <?php 
         include '../../../config/conexionBD.php';
         $sql = "SELECT * FROM usuario WHERE usu_eliminado='N'";
@@ -49,7 +53,7 @@
                         <th>Apellidos</th>
                         <th>Direccion</th>
                         <th>Correo</th>
-                        <th>Fehca de nacimiento</th>
+                        <th>Fecha de nacimiento</th>
                     </tr>
                 ";
                 echo "<tr>";
@@ -61,8 +65,10 @@
                 echo "<td>".$row["usu_fecha_nacimiento"]."</td>";
                 echo "</tr>";
                 echo "</table>";
+
                 $sql2 = "SELECT * FROM telefono WHERE tel_usuario=".$row['usu_id'];
                 $resultado2 = $conn->query($sql2);
+
                 if($resultado2->num_rows > 0){
                     while($row2 = $resultado2->fetch_assoc()){
                         echo "
