@@ -35,9 +35,9 @@
         "tel_fecha_modificacion = '$fecha' " . "WHERE tel_id = $codigo_tel" . " and tel_usuario = $codigo_usu"; 
         
         if ($conn->query($sql) === TRUE) { 
-            header ("Location: ../../vista/usuario/agenda.php?id=$codigo"); 
+            header ("Location: ../../vista/usuario/agenda.php?id=$codigo_usu"); 
         } else { 
-            header ("Location: ../../vista/usuario/agenda.php?id=$codigo");
+            header ("Location: ../../vista/usuario/agenda.php?id=$codigo_usu");
         }
         
         $conn->close(); 

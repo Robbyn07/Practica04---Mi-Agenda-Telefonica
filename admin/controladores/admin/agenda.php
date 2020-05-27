@@ -45,21 +45,22 @@
 
                 if($resultado2->num_rows > 0){
                     echo "
-                            <table class=telefono>
-                            <tr>
-                                <th>Numero</th>
-                                <th>Operadora</th>
-                                <th>Tipo</th>
-                            </tr>
-                            ";
+                        <table class=telefono>
+                        <tr>
+                            <th>Numero</th>
+                            <th>Operadora</th>
+                            <th>Tipo</th>
+                        </tr>
+                        ";
                     while($row2 = $resultado2->fetch_assoc()){
                         echo "<tr >";
                         echo "<td class=telefono>".$row2["tel_numero"]."</td>";
                         echo "<td>".$row2["tel_operadora"]."</td>";
                         echo "<td>".$row2["tel_tipo"]."</td>";
                         echo "</tr>";
-                        echo "</table>";
                     }
+
+                    echo "</table>";
                 }
             }
             echo "</aside>";
@@ -94,26 +95,30 @@
                 echo "<td>".$row["usu_fecha_nacimiento"]."</td>";
                 echo "</tr>";
                 echo "</table>";
+                
                 $sql2 = "SELECT * FROM telefono WHERE tel_eliminado='N' and tel_usuario=".$row['usu_id'];
                 $resultado2 = $conn->query($sql2);
 
                 if($resultado2->num_rows > 0){
+                    echo "
+                        <table class=telefono>
+                        <tr>
+                            <th>Numero</th>
+                            <th>Operadora</th>
+                            <th>Tipo</th>
+                        </tr>
+                        ";
+
                     while($row2 = $resultado2->fetch_assoc()){
-                        echo "
-                            <table class=telefono>
-                            <tr>
-                                <th>Numero</th>
-                                <th>Operadora</th>
-                                <th>Tipo</th>
-                            </tr>
-                            ";
+                        
                         echo "<tr >";
                         echo "<td class=telefono>".$row2["tel_numero"]."</td>";
                         echo "<td>".$row2["tel_operadora"]."</td>";
                         echo "<td>".$row2["tel_tipo"]."</td>";
                         echo "</tr>";
-                        echo "</table>";
                     }
+
+                    echo "</table>";
                 }
             }
             echo "</aside>";

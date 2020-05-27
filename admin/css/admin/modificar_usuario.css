@@ -52,6 +52,10 @@ div{
     clear: both;
 }
 
+table{
+    width: 100%;
+}
+
 th, td{
     width: 1%;
     border: solid black;

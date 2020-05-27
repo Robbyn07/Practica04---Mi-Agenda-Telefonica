@@ -12,6 +12,11 @@ header, h2{
     text-align: center;
 }
 
+#primer_div{
+    background-color: rgb(229, 243, 244);
+    border-bottom: solid black;
+}
+
 form{
     margin-left: 35%;
     width: 30%;
@@ -21,7 +26,6 @@ form{
 input{
     margin: 5px 10px;
 }
-
 
 th{
     background-color: darkcyan;

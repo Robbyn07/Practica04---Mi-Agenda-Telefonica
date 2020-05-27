@@ -4,7 +4,7 @@
 <head> 
     <meta charset="UTF-8"> 
     <title>Modificar Datos</title> 
-    <link rel="stylesheet" type="text/css" href="../../css/diseno_modificar.css"/>
+    <link rel="stylesheet" type="text/css" href="../../css/usuario/diseno_modificar.css"/>
     <script type="text/javascript" src="../../javascript/validacion_modificar_telefono.js"></script>
 </head> 
 

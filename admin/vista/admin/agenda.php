@@ -23,7 +23,7 @@
         <a href="index.php?id=<?php echo $id ?>"><img id="logo_principal" src="../../contenido/logo_ups.png" alt="logo"></a>
     </header>
    
-    <div>
+    <div id="primer_div">
         <form>
             <input type="text" id="cedula" name="cedula" value="">
             <input type="button" id="buscarcedula" name="buscarcedula" value="Buscar por cedula" onclick="buscarPorCedula()">
@@ -70,22 +70,24 @@
                 $resultado2 = $conn->query($sql2);
 
                 if($resultado2->num_rows > 0){
-                    while($row2 = $resultado2->fetch_assoc()){
-                        echo "
-                            <table class=telefono>
-                            <tr>
-                                <th>Numero</th>
-                                <th>Operadora</th>
-                                <th>Tipo</th>
-                            </tr>
+                    echo "
+                        <table class=telefono>
+                        <tr>
+                            <th>Numero</th>
+                            <th>Operadora</th>
+                            <th>Tipo</th>
+                        </tr>
                         ";
+
+                    while($row2 = $resultado2->fetch_assoc()){
                         echo "<tr >";
                         echo "<td class=telefono>".$row2["tel_numero"]."</td>";
                         echo "<td>".$row2["tel_operadora"]."</td>";
                         echo "<td>".$row2["tel_tipo"]."</td>";
                         echo "</tr>";
-                        echo "</table>";
                     }
+
+                    echo "</table>";
                 }
                 echo "</aside>";
             }
