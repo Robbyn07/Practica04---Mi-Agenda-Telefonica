@@ -27,12 +27,10 @@
         $sql = "UPDATE telefono SET tel_eliminado='S'," . " tel_fecha_modificacion = '$fecha'" . "WHERE tel_usuario = $codigo_usu and tel_id = $codigo_tel"; 
         
         if ($conn->query($sql) === TRUE) { 
-            echo "<p>Se ha eliminado los datos correctamemte!!!</p>"; 
+            header ("Location: ../../vista/usuario/agenda.php?id=$codigo_usu"); 
         } else { 
-            echo "<p>Error: " . $sql . "<br>" . mysqli_error($conn) . "</p>"; 
+            header ("Location: ../../vista/usuario/agenda.php?id=$codigo_usu"); 
         } 
-        
-        echo "<a href='../../vista/usuario/index.php?id=$codigo_usu'>Regresar</a>"; 
         
         $conn->close();
     ?> 

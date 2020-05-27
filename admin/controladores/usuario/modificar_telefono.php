@@ -35,12 +35,10 @@
         "tel_fecha_modificacion = '$fecha' " . "WHERE tel_id = $codigo_tel" . " and tel_usuario = $codigo_usu"; 
         
         if ($conn->query($sql) === TRUE) { 
-            echo "Se ha actualizado los datos correctamente!!!<br>"; 
+            header ("Location: ../../vista/usuario/agenda.php?id=$codigo"); 
         } else { 
-            echo "Error: " . $sql . "<br>" . mysqli_error($conn) . "<br>"; 
-        } 
-        
-        echo "<a href='../../vista/usuario/agenda.php?id=$codigo_usu'>Regresar</a>"; 
+            header ("Location: ../../vista/usuario/agenda.php?id=$codigo");
+        }
         
         $conn->close(); 
     ?>

@@ -44,8 +44,7 @@
                 $resultado2 = $conn->query($sql2);
 
                 if($resultado2->num_rows > 0){
-                    while($row2 = $resultado2->fetch_assoc()){
-                        echo "
+                    echo "
                             <table class=telefono>
                             <tr>
                                 <th>Numero</th>
@@ -53,6 +52,7 @@
                                 <th>Tipo</th>
                             </tr>
                             ";
+                    while($row2 = $resultado2->fetch_assoc()){
                         echo "<tr >";
                         echo "<td class=telefono>".$row2["tel_numero"]."</td>";
                         echo "<td>".$row2["tel_operadora"]."</td>";

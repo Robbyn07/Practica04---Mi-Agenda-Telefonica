@@ -3,21 +3,19 @@ var vgeneral = [false, false, false, false, false];
 function validacion(formulario){
     var bandera = true;
 
+    validarNA(document.getElementById('name'), 'mnombre',0);
+    validarNA(document.getElementById('lastname'), 'mapellido',1)
+    verificarDT(document.getElementById('address'), 'mdireccion',2);
+    validarFecha(3);
+    verificarCorreo(4);
+
     for(var i=0; i<5 ; i++){
         if(vgeneral[i]==false){
             bandera = false;
             i = 5;
         }
     }
-
-    if(bandera!==true){
-        validarNA(document.getElementById('name'), 'mnombre',0);
-        validarNA(document.getElementById('lastname'), 'mapellido',1)
-        verificarDT(document.getElementById('address'), 'mdireccion',2);
-        validarFecha(3);
-        verificarCorreo(4);
-    }
-
+    
     return bandera;
 }
 

@@ -32,12 +32,13 @@
             $sql2 = "UPDATE usuario " . "SET usu_password = MD5('$contra2'), " . "usu_fecha_modificacion = '$fecha' " . "WHERE usu_id = $codigo"; 
             
             if ($conn->query($sql2) === TRUE) { 
-                echo "Se ha actualizado la contrasena correctamente!!!<br>"; 
                 header ("Location: ../../vista/usuario/index.php?id=$codigo");
             } else { 
                 echo "Error: " . $sql . "<br>" . mysqli_error($conn) . "<br>"; 
-            } 
-            
+                header ("Location: ../../vista/usuario/cambiar_contrasena.php?id=$codigo");
+            }    
+        }else{
+            header ("Location: ../../vista/usuario/cambiar_contrasena.php?id=$codigo");
         }
  
         $conn->close(); 

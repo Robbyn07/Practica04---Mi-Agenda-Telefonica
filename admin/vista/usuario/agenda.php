@@ -25,6 +25,8 @@
     </header>
 
     <form id="form1" >
+        <h2>Buscar Telefonos</h2>
+
         <input type="text" id="numero" name="numero" value="">
         <input type="button" id="buscarnumero" name="buscarnumero" value="Buscar por numero" onclick="buscarPorNumero(<?php echo $codigo?>)">
 
@@ -55,7 +57,10 @@
     </div>
 
     <section id="agregar_telefono">
+
         <form id="form2" method="POST" onsubmit="return validacion()" action="../../controladores/usuario/agregar_telefono.php">
+            <h2>Agregar Telefonos</h2>
+
             <input type="hidden" id="id" name="id" value="<?php echo $codigo ?>" /> 
 
             <label id="label_tel" for="telf">Telefono: </label>
