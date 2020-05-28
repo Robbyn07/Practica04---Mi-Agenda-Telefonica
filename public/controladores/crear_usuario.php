@@ -41,13 +41,14 @@
             while($row = $result->fetch_assoc()) {
                 $usu_id =  $row["usu_id"];
             }
+            
             $sql3 = "INSERT INTO telefono VALUES (0, '$telefono', '$operadora', '$tipo_telefono', 'N', null, null, $usu_id)";
             if($conn->query($sql3) === TRUE){
                 echo "<p>Se ha creado los datos personales correctamente!!!</p>";
                 header ("Location: ../vista/login.html");
             }else{
                 echo "<p>Ususario creado, pero telefono incorrecto</p>";
-                echo "<a href='../vista/login.html'>Ir a login</a>";
+                header ("Location: ../vista/crear_usuario.html");
             }
             
         } else {

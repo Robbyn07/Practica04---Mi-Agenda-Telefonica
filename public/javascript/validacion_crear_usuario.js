@@ -59,7 +59,7 @@ function noNumeros(texto){
     }
 }
 
-function validarOperadoraTipo(atri, men,id){
+function verificarOperadoraTipo(atri, men,id){
     console.log('adad')
     bandera = false;
     campo = document.getElementById(atri).value;

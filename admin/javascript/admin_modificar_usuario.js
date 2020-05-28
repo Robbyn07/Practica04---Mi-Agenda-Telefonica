@@ -45,6 +45,7 @@ function eliminar(usuario, informacion, admin, contador){
             document.getElementById(informacion).innerHTML = this.responseText;
         }
     };
+    //xmlhttp.open("GET","/practica04---mi-agenda-telefonica/admin/controladores/admin/editar_usuario.php?usuario="+usuario+"?admin="+admin,true);
     xmlhttp.open("GET","../../controladores/admin/eliminar_usuario.php?usuario="+usuario+"&admin="+admin,true);
     xmlhttp.send();
     
@@ -83,10 +84,12 @@ var vgeneral = [false, false, false, false];
 
 function validacionModiciacion(){
     var bandera = true;
+
     validarNA(document.getElementById('name'), 'mnombre',0);
     validarNA(document.getElementById('lastname'), 'mapellido',1)
     verificarDT(document.getElementById('address'), 'mdireccion',2);
     verificarCorreo(3);
+
     for(var i=0; i<4 ; i++){
         if(vgeneral[i]==false){
             bandera = false;
