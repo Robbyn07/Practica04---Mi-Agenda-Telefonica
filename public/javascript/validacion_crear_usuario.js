@@ -14,8 +14,8 @@ function validacion(formulario){
         validarNA(document.getElementById('lastname'), 'mapellido',2)
         verificarDT(document.getElementById('address'), 'mdireccion',3);
         verificarDT(document.getElementById('telf'), 'mtelefono',4);
-        verificarOperadoraTipo('oper' , 'moper', 5)
-        verificarOperadoraTipo('tipo', 'mtipo', 6)
+        validarOperadoraTipo('oper' , 'moper', 5)
+        validarOperadoraTipo('tipo', 'mtipo', 6)
         validarFecha(7);
         verificarCorreo(8);
         verificarContrasena(9);
