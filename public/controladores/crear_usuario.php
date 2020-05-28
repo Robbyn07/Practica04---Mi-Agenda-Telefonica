@@ -61,7 +61,6 @@
         header ("Location: ../vista/crear_usuario.html");
     }
 
-     //cerrar la base de datos
      $conn->close();
  
     ?>

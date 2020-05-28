@@ -3,7 +3,7 @@
     
 <head> 
     <meta charset="UTF-8"> 
-    <title>Modificar datos de persona </title> 
+    <title>Modificar telefono</title> 
 </head> 
 
 <body> 

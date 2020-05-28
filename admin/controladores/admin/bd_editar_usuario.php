@@ -63,9 +63,6 @@
             header ("Location: ../../vista/admin/modificar_usuario.php?id=$idadmin");
         }
 
-        
-    
-        //cerrar la base de datos
         $conn->close();
         echo "<a href='../vista/crear_usuario.html'>Regresar</a>";
     ?>

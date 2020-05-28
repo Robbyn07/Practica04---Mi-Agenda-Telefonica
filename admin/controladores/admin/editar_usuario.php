@@ -35,9 +35,9 @@
                     <input type='text' id='email' name='email' value='".$row['usu_correo']."' onkeyup=\"return verificarCorreo(3)\"/>
                     <span id='mmail' class='error'></span>
                     <input id='agregar' type='submit' value='Agregar'/>
-                    </fieldset>
-                    <input type='text' class='ocultar' name='idadmin' value=$admin></input>
-                    <input type='text' class='ocultar' name='cedula' value=".$row['usu_cedula']."></input>
+                </fieldset>
+                <input type='text' class='ocultar' name='idadmin' value=$admin></input>
+                <input type='text' class='ocultar' name='cedula' value=".$row['usu_cedula']."></input>
             </form>";
     }
 

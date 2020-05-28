@@ -1,4 +1,4 @@
-var vgeneral = [false, false, false, false, false];
+var vgeneral = [false, false, false, false];
 
 function validacion(formulario){
     var bandera = true;
@@ -7,12 +7,11 @@ function validacion(formulario){
     validarNA(document.getElementById('lastname'), 'mapellido',1)
     verificarDT(document.getElementById('address'), 'mdireccion',2);
     validarFecha(3);
-    verificarCorreo(4);
 
-    for(var i=0; i<5 ; i++){
+    for(var i=0; i<4 ; i++){
         if(vgeneral[i]==false){
             bandera = false;
-            i = 5;
+            i = 4;
         }
     }
     
@@ -140,36 +139,6 @@ function validarFecha(id){
         vgeneral[id]=bandera;
     }
     return bandera;
-}
-
-//VERIFICACION DE CORREO
-function verificarCorreo(id){
-    var bandera = true;
-    var corr = document.getElementById("email").value;
-    var partes = corr.split("@");
-
-    if(partes.length==2){
-        if(partes[0].length>=3){
-            if(partes[1]=='ups.edu.ec' || partes[1]=='est.ups.edu.ec'){
-                arreglo(document.getElementById("email"), 'mmail');
-                bandera = true;
-                vgeneral[id]=bandera;
-            }else{
-                error(document.getElementById("email"), 'mmail', '<br>El correo no pertenece a la UPS')
-                bandera = false;
-                vgeneral[id]=bandera;
-            }
-        }else{
-            error(document.getElementById("email"), 'mmail', '<br>El nombre de la cuenta es muy corta')
-            bandera = false;
-            vgeneral[id]=bandera;
-        }
-    }else{
-        error(document.getElementById("email"), 'mmail', '<br>El dato ingresado no es un correo electronico')
-        bandera = false;
-        vgeneral[id]=bandera;
-    }
-
 }
 
 //Verificar direccion y telefono

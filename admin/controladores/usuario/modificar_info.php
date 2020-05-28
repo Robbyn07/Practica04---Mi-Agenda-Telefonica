@@ -24,13 +24,12 @@
         $apellidos = isset($_POST["lastname"]) ? mb_strtoupper(trim($_POST["lastname"]), 'UTF-8') : null; 
         $direccion = isset($_POST["address"]) ? mb_strtoupper(trim($_POST["address"]), 'UTF-8') : null; 
         $fechaNacimiento = isset($_POST["nac"]) ? trim($_POST["nac"]): null; 
-        $correo = isset($_POST["email"]) ? trim($_POST["email"]): null; 
 
         date_default_timezone_set("America/Guayaquil"); 
         $fecha = date('Y-m-d H:i:s', time()); 
         
         $sql = "UPDATE usuario " . "SET usu_nombres = '$nombres', " . "usu_apellidos = '$apellidos', " . 
-        "usu_direccion = '$direccion', " . "usu_fecha_nacimiento = '$fechaNacimiento', " . "usu_correo = '$correo', " . "usu_fecha_modificacion = '$fecha' " . 
+        "usu_direccion = '$direccion', " . "usu_fecha_nacimiento = '$fechaNacimiento', " . "usu_fecha_modificacion = '$fecha' " . 
         "WHERE usu_id = $codigo"; 
         
         if ($conn->query($sql) === TRUE) { 
@@ -39,6 +38,7 @@
             
         } else { 
             echo "Error: " . $sql . "<br>" . mysqli_error($conn) . "<br>"; 
+            header("Location: ../../vista/usuario/modificar_info.php?id=$codigo");
         } 
         
         $conn->close(); 

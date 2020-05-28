@@ -59,7 +59,7 @@
                         <span id="mnac" class="error" ></span>
 
                         <label>E-mail</label>
-                        <input type="text" id="email" name="email" value="<?php echo $row["usu_correo"]; ?>" placeholder="Ej. usu1@est.ups.edu.ec / usu2@ups.edu.ec" onkeyup="return verificarCorreo(4)"/>
+                        <input type="text" id="email" name="email" value="<?php echo $row["usu_correo"]; ?>" disabled/>
                         <span id="mmail" class="error"></span>
 
                         <input id="modificar" type="submit" value="Modificar"/>

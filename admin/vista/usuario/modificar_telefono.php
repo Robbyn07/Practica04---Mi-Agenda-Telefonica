@@ -35,7 +35,7 @@
                 ?> 
                 <form method="POST" onsubmit="return validacion()" action="../../controladores/usuario/modificar_telefono.php">
                     <fieldset>
-                        <legend>Formulario</legend>
+                        <legend>Modificar Telefono</legend>
 
                         <input type="hidden" id="id" name="id" value="<?php echo $codigo_tel ?>" />
                         <input type="hidden" id="usu" name="usu" value="<?php echo $codigo_usu ?>" /> 

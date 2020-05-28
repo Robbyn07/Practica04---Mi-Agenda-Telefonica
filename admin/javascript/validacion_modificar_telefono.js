@@ -1,6 +1,6 @@
 var vgeneral = [false, false, false];
 
-function validacion(formulario){
+function validacion(){
     var bandera = true;
 
     for(var i=0; i<3 ; i++){
@@ -85,7 +85,7 @@ function validarOperadoraTipo(atri, men,id){
 
 //Verificar direccion y telefono
 function verificarDT(atrib, mens, id){
-    var bandera = true;
+    var bandera = false;
     if(atrib.value.length > 0){
         if(mens=='mtelefono' && atrib.value.length<9){
             error(atrib, mens, '<br>El numero de telefono no tiene los digitos necesarios')

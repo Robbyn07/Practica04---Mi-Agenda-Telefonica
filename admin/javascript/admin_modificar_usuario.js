@@ -1,10 +1,8 @@
 function modificar(usuario, informacion, admin, contador){
     for (i=0; i< contador; i++){
         if(i!=informacion){
-            document.getElementById(i).innerHTML = '';
-            
+            document.getElementById(i).innerHTML = '';   
         }
-        
     }
 
     if (window.XMLHttpRequest) {
@@ -30,10 +28,8 @@ function modificar(usuario, informacion, admin, contador){
 function eliminar(usuario, informacion, admin, contador){
     for (i=0; i< contador; i++){
         if(i!=informacion){
-            document.getElementById(i).innerHTML = '';
-            
-        }
-        
+            document.getElementById(i).innerHTML = '';   
+        } 
     }
 
     if (window.XMLHttpRequest) {
@@ -49,7 +45,6 @@ function eliminar(usuario, informacion, admin, contador){
             document.getElementById(informacion).innerHTML = this.responseText;
         }
     };
-    //xmlhttp.open("GET","/practica04---mi-agenda-telefonica/admin/controladores/admin/editar_usuario.php?usuario="+usuario+"?admin="+admin,true);
     xmlhttp.open("GET","../../controladores/admin/eliminar_usuario.php?usuario="+usuario+"&admin="+admin,true);
     xmlhttp.send();
     
@@ -60,10 +55,8 @@ function eliminar(usuario, informacion, admin, contador){
 function contra(usuario, informacion, admin, contador){
     for (i=0; i< contador; i++){
         if(i!=informacion){
-            document.getElementById(i).innerHTML = '';
-            
-        }
-        
+            document.getElementById(i).innerHTML = '';   
+        } 
     }
 
     if (window.XMLHttpRequest) {
@@ -79,7 +72,6 @@ function contra(usuario, informacion, admin, contador){
             document.getElementById(informacion).innerHTML = this.responseText;
         }
     };
-    //xmlhttp.open("GET","/practica04---mi-agenda-telefonica/admin/controladores/admin/editar_usuario.php?usuario="+usuario+"?admin="+admin,true);
     xmlhttp.open("GET","../../controladores/admin/cambiar_contrasena_usuario.php?usuario="+usuario+"&admin="+admin,true);
     xmlhttp.send();
     

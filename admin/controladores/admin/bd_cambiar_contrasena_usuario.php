@@ -35,9 +35,6 @@
             echo "<p class='error'>Error: " . mysqli_error($conn) . "</p>";
         }
 
-        
-    
-        //cerrar la base de datos
         $conn->close();
         echo "<a href='../vista/crear_usuario.html'>Regresar</a>";
  

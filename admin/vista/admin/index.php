@@ -23,7 +23,7 @@
   </header>
 
   <section>
-    <h1>Bienvenido Ingeniero-Doctor</h1>
+    <h1>Bienvenido Administrador</h1>
 
     <input type="button" id="agregar" name="agregar" value="Agregar usuario" onclick=<?php echo "location.href='agregar_usuario.php?id=$id'" ?>> 
     <input type="button" id="modificar" name="modificar" value="Modificar y eliminar" onclick=<?php echo "location.href='modificar_usuario.php?id=$id'" ?>> 
