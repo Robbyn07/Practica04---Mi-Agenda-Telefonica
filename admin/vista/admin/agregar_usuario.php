@@ -47,11 +47,11 @@
             <span id="mtelefono" class="error"></span>
 
             <label>Operadora</label>
-            <input type="text" id="oper" name="oper" placeholder="Ej. Movistar" onkeyup="return validarOperadoraTipo('oper', 'moper',5)"/>
+            <input type="text" id="oper" name="oper" placeholder="Ej. Movistar" onkeyup="return verificarOperadoraTipo('oper', 'moper',5)"/>
             <span id="moper" class="error"></span>
 
             <label>Tipo telefono</label>
-            <input type="text" id="tipo" name="tipo" placeholder="Celular/Convencional" onkeyup="return validarOperadoraTipo('tipo', 'mtipo', 6)"/>
+            <input type="text" id="tipo" name="tipo" placeholder="Celular/Convencional" onkeyup="return verificarOperadoraTipo('tipo', 'mtipo', 6)"/>
             <span id="mtipo" class="error"></span>
 
             <label>Fecha de nacimiento</label>

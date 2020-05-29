@@ -37,7 +37,7 @@
         if ($conn->query($sql) === TRUE) { 
             header ("Location: ../../vista/usuario/agenda.php?id=$codigo_usu"); 
         } else { 
-            header ("Location: ../../vista/usuario/agenda.php?id=$codigo_usu");
+            header ("Location: ../../vista/usuario/modificar_telefono.php?id=$codigo_usu");
         }
         
         $conn->close(); 

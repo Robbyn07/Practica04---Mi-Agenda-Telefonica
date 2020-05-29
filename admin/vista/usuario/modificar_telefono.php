@@ -5,7 +5,7 @@
     <meta charset="UTF-8"> 
     <title>Modificar Datos</title> 
     <link rel="stylesheet" type="text/css" href="../../css/usuario/diseno_modificar.css"/>
-    <script type="text/javascript" src="../../javascript/validacion_modificar_telefono.js"></script>
+    <script src="../../javascript/validacion_modificar_telefono.js"></script>
 </head> 
 
 <body> 
@@ -45,11 +45,11 @@
                         <span id="mtelefono" class="error"></span>
 
                         <label>Operadora</label>
-                        <input type="text" id="oper" name="oper" placeholder="Ej. Movistar" value="<?php echo $row["tel_operadora"]; ?>" onkeyup="return validarOperadoraTipo('oper', 'moper', 1)"/>
+                        <input type="text" id="oper" name="oper" placeholder="Ej. Movistar" value="<?php echo $row["tel_operadora"]; ?>" onkeyup="return verificarOperadoraTipo('oper', 'moper', 1)"/>
                         <span id="moper" class="error"></span>
 
                         <label>Tipo telefono</label>
-                        <input type="text" id="tip" name="tip" placeholder="Celular/Convencional" value="<?php echo $row["tel_tipo"]; ?>" onkeyup="return validarOperadoraTipo('tipo', 'mtipo', 2)"/>
+                        <input type="text" id="tip" name="tip" placeholder="Celular/Convencional" value="<?php echo $row["tel_tipo"]; ?>" onkeyup="return verificarOperadoraTipo('tip', 'mtipo', 2)"/>
                         <span id="mtipo" class="error"></span>
 
                         <input id="modificar" type="submit" value="Modificar"/>

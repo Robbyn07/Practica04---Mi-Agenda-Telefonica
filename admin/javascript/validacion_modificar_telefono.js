@@ -3,17 +3,16 @@ var vgeneral = [false, false, false];
 function validacion(){
     var bandera = true;
 
+    verificarDT(document.getElementById('telf'), 'mtelefono', 0);
+    verificarOperadoraTipo('oper' , 'moper', 1)
+    verificarOperadoraTipo('tip', 'mtipo', 2)
+
     for(var i=0; i<3 ; i++){
         if(vgeneral[i]==false){
             bandera = false;
             i = 3;
+            console.log(vgeneral)
         }
-    }
-
-    if(bandera!==true){
-        verificarDT(document.getElementById('telf'), 'mtelefono', 0);
-        verificarOperadoraTipo('oper' , 'moper', 1)
-        verificarOperadoraTipo('tipo', 'mtipo', 2)
     }
 
     return bandera;
@@ -80,6 +79,7 @@ function verificarOperadoraTipo(atri, men,id){
         bandera = false;
         vgeneral[id]=bandera;
     }
+
     return bandera;
 }
 
