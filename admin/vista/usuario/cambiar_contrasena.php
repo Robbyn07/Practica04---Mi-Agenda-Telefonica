@@ -34,7 +34,7 @@
                 ?> 
                 <form method="POST" onsubmit="return validacion()" action="../../controladores/usuario/modificar_contra.php">
                     <fieldset>
-                        <legend>Cambiar Contrasena</legend>
+                        <legend>Cambiar Contraseña</legend>
 
                         <input type="hidden" id="id" name="id" value="<?php echo $codigo ?>" /> 
                         
